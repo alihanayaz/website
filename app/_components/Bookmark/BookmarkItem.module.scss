@@ -4,6 +4,7 @@
 
 .bookmarkItem {
   @include bookmark-properties;
+  align-items: flex-start;
 
   .imageContainer {
     position: relative;
