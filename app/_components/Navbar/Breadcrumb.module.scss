@@ -1,0 +1,18 @@
+@use "variables" as *;
+@use "transitions" as *;
+
+.breadcrumbContainer {
+  display: flex;
+  gap: $spacing-sm;
+  font-size: $font-sm;
+  flex-wrap: wrap;
+
+  & > li:hover {
+    @include transition-properties;
+    color: $color-400;
+  }
+
+  .activeBreadcrumb {
+    color: $color-orange;
+  }
+}

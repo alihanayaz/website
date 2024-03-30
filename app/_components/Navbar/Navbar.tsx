@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import cn from "classnames";
 import { capitalizeFirstLetter } from "@/_lib/helpers";
+import Breadcrumb from "./Breadcrumb";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,6 +34,7 @@ export function Navbar() {
           priority={true}
         ></Image>
       </div>
+      <Breadcrumb pathname={pathname} />
       <div
         className={cn(styles.list, { [styles.open]: isMenuOpen })}
         onClick={toggleMenu}

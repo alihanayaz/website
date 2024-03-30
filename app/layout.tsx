@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Inter } from "next/font/google";
 import "@/globals.scss";
 import Navbar from "@/_components/Navbar";
 import Socials from "@/_components/Socials";
 
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
+const spaceGrotesk = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Alihan Ayaz",
