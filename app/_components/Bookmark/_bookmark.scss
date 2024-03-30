@@ -1,5 +1,6 @@
 @use "transitions" as *;
 @use "variables" as *;
+@use "media-queries" as *;
 
 @mixin bookmark-properties {
   display: flex;
@@ -10,9 +11,11 @@
   border-radius: $radius-sm;
   padding: $spacing-lg;
   gap: $spacing-sm;
-  @include transition-properties;
 
-  &:hover {
-    background-color: $color-transparent-30;
+  @include media-query(large) {
+    @include transition-properties;
+    &:hover {
+      background-color: $color-transparent-30;
+    }
   }
 }

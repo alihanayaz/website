@@ -5,7 +5,6 @@ import {
   BookmarkCollectionProps,
 } from "@/_lib/raindrop/types";
 import { BookmarkItem } from "@/_components/Bookmark";
-import Link from "next/link";
 import styles from "./page.module.scss";
 
 export const dynamicParams = false;
@@ -31,12 +30,7 @@ export default async function BookmarkPage({
 
   return (
     <Section>
-      <h3>
-        <Link className={styles.breadcrumb} href={"/bookmarks"}>
-          Bookmarks
-        </Link>{" "}
-        / {currentCollection.title}
-      </h3>
+      <h3>{currentCollection.title}</h3>
       <div className={styles.bookmarkItemContainer}>
         {bookmarks.map((bookmark: BookmarkItemProps) => {
           return (

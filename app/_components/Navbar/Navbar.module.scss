@@ -32,8 +32,11 @@
   }
 
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   margin-bottom: $spacing-xl;
+  gap: $spacing-md;
 
   .menuButton {
     display: flex;
