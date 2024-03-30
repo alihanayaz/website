@@ -1,0 +1,15 @@
+@use "variables" as *;
+
+.breadcrumb {
+  border-bottom: 1px solid $color-transparent-10;
+
+  &:hover {
+    border-color: $color-transparent-30;
+  }
+}
+
+.bookmarkItemContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 1rem;
+}

@@ -1,10 +1,10 @@
-import Card from "@/_components/Card";
+import Section from "@/_components/Section";
 import Timeline from "@/_components/Timeline";
 
 export default function Page() {
   return (
-    <Card>
+    <Section>
       <Timeline />
-    </Card>
+    </Section>
   );
 }

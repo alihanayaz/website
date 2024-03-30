@@ -8,13 +8,14 @@
   align-items: center;
   flex-wrap: wrap;
   gap: $spacing-md;
+  margin-bottom: $spacing-lg;
 
-  & > * {
+  & > a {
     padding: $spacing-xs $spacing-sm;
     @include transition-properties;
     @include media-query(large) {
       &:hover {
-        color: $text-fade;
+        color: $color-400;
       }
     }
   }
