@@ -8,10 +8,10 @@
   gap: $spacing-md;
 
   .profilePhoto {
-    background-color: $slate-400;
+    background-color: $color-400;
     border-radius: $radius-xl;
     padding: $spacing-xs;
-    box-shadow: $slate-950 0px 5px 15px;
+    box-shadow: $color-950 0px 5px 15px;
   }
 
   .profileInfo {

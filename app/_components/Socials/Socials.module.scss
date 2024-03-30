@@ -15,7 +15,7 @@
     @include transition-properties;
     @include media-query(large) {
       &:hover {
-        color: $slate-400;
+        color: $color-400;
       }
     }
   }
