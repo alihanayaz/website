@@ -1,0 +1,27 @@
+@use "bookmark" as *;
+@use "variables" as *;
+@use "media-queries" as *;
+
+.collection {
+  @include bookmark-properties;
+  margin-bottom: $spacing-md;
+  padding: $spacing-sm;
+
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  span {
+    font-size: $font-sm;
+    color: $color-400;
+  }
+
+  @include media-query(large) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: $spacing-lg;
+  }
+}

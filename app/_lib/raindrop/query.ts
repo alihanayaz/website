@@ -1,7 +1,9 @@
 import "server-only";
 import { cache } from "react";
+import collectionIds from "@/_data/bookmarkCollectionIds.json";
 
-const RAINDROP_API_URL = "https://api.raindrop.io/rest/v1";
+const raindropApiUrl = "https://api.raindrop.io/rest/v1";
+const revalidateTime = 60 * 60 * 24; // 24 hours
 
 const options = {
   method: "GET",
@@ -13,10 +15,13 @@ const options = {
 
 export const getBookmarkCollections = cache(async () => {
   try {
-    const response = await fetch(`${RAINDROP_API_URL}/collections`, options);
+    const response = await fetch(`${raindropApiUrl}/collections`, {
+      ...options,
+      next: { revalidate: revalidateTime },
+    });
     const responseData = await response.json();
     const filteredData = await responseData.items.filter(
-      (item: any) => item.count > 0
+      (item: any) => item.count > 0 && collectionIds.includes(item._id)
     );
     return filteredData;
   } catch (error) {
@@ -27,10 +32,10 @@ export const getBookmarkCollections = cache(async () => {
 
 export const getBookmarks = cache(async (id: string) => {
   try {
-    const response = await fetch(
-      `${RAINDROP_API_URL}/raindrops/${id}`,
-      options
-    );
+    const response = await fetch(`${raindropApiUrl}/raindrops/${id}`, {
+      ...options,
+      next: { revalidate: revalidateTime },
+    });
     const responseData = await response.json();
     return responseData.items;
   } catch (error) {

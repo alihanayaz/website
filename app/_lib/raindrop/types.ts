@@ -6,7 +6,7 @@ export interface BookmarkCollectionProps {
 }
 
 export interface BookmarkItemProps {
-  _id?: string;
+  _id: string;
   title: string;
   link: string;
   cover: string;

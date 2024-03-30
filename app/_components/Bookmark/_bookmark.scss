@@ -1,0 +1,17 @@
+@use "transitions" as *;
+@use "variables" as *;
+
+@mixin bookmark-properties {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: $color-transparent-10;
+  border-radius: $radius-sm;
+  padding: $spacing-lg;
+  gap: $spacing-sm;
+  @include transition-properties;
+
+  &:hover {
+    background-color: $color-transparent-30;
+  }
+}
