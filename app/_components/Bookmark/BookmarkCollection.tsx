@@ -1,7 +1,7 @@
-import Image from "next/image";
 import styles from "./BookmarkCollection.module.scss";
 import Link from "next/link";
 import { BookmarkCollectionProps } from "@/_lib/raindrop/types";
+import Icon from "@/_components/Icon";
 
 export function BookmarkCollection({
   title,
@@ -12,13 +12,7 @@ export function BookmarkCollection({
     <div>
       <Link className={styles.collection} href={`/bookmarks/${slug}`}>
         <div className={styles.title}>
-          <Image
-            src="/folder.svg"
-            width={24}
-            height={24}
-            alt="folder icon"
-            priority={true}
-          />
+          <Icon name="Collection" />
           <h4>{title}</h4>
         </div>
         <span>

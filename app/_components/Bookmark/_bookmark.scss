@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: $color-transparent-10;
+  background-color: $color-transparent-30;
   border-radius: $radius-sm;
   padding: $spacing-lg;
   gap: $spacing-sm;
@@ -15,7 +15,7 @@
   @include media-query(large) {
     @include transition-properties;
     &:hover {
-      background-color: $color-transparent-30;
+      background-color: $color-transparent-50;
     }
   }
 }

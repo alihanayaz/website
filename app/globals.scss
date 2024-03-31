@@ -7,8 +7,8 @@
 }
 
 body {
-  background-color: $color-950;
-  color: $color-50;
+  background-color: $color-300;
+  color: $color-950;
   font-size: $font-md;
   line-height: $font-lg;
   letter-spacing: 0.05rem;
@@ -43,18 +43,14 @@ body {
       pointer-events: none;
 
       .gradient {
-        background: url(../public/mesh.jpg);
+        background: url(../public/gradient.jpeg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        mask-image: linear-gradient(
-          to bottom,
-          $color-950 50%,
-          transparent 100%
-        );
+        mask-image: linear-gradient(to bottom, $color-300 50%, transparent 100%);
         width: 100%;
         height: 100%;
-        opacity: 0.7;
+        opacity: 0.5;
       }
     }
 

@@ -7,12 +7,12 @@
   font-size: $font-sm;
   flex-wrap: wrap;
 
-  & > li:hover {
+  & > li:not(.activeBreadcrumb):hover {
     @include transition-properties;
-    color: $color-400;
+    color: $color-700;
   }
 
   .activeBreadcrumb {
-    color: $color-orange;
+    color: $color-purple;
   }
 }

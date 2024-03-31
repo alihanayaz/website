@@ -4,13 +4,13 @@
 .timelineItem {
   display: flex;
   position: relative;
-  border-left: 1px solid $color-400;
+  border-left: 1px solid $color-700;
 
   .timelineItemContent {
     margin: 0 0 $spacing-xxl $spacing-md;
 
     .bulletPoint {
-      background-color: $color-orange;
+      background-color: $color-purple;
       width: 0.75rem;
       height: 0.75rem;
       position: absolute;
@@ -29,8 +29,8 @@
 
       .year {
         display: inline-block;
-        background-color: $color-50;
-        color: $color-950;
+        background-color: $color-950;
+        color: $color-50;
         padding: $spacing-xs $spacing-sm;
         border-radius: $radius-sm;
         font-weight: bold;
@@ -41,7 +41,7 @@
       }
 
       .duration {
-        color: $color-400;
+        color: $color-700;
         margin-bottom: $spacing-sm;
       }
 
@@ -58,7 +58,6 @@
 
     .detail {
       margin: $spacing-sm 0;
-      color: $color-200;
     }
   }
 }

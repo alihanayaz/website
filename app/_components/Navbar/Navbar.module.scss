@@ -4,16 +4,8 @@
 
 .navbar {
   @mixin active {
-    background-color: $color-50;
-    color: $color-950;
-
-    .icon {
-      background-color: $color-950;
-
-      & > * {
-        filter: invert(1);
-      }
-    }
+    background-color: $color-950;
+    color: $color-50;
   }
 
   @mixin keyframe {
@@ -42,15 +34,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $color-transparent-10;
+    background-color: $color-transparent-30;
     padding: $spacing-sm;
     border-radius: $radius-sm;
     cursor: pointer;
     @include transition-properties;
 
     &:hover {
-      background-color: $color-transparent-30;
-      box-shadow: 0px 0px 0px 2px $color-50;
+      background-color: $color-transparent-50;
+      box-shadow: 0px 0px 0px 2px $color-800;
     }
   }
 
@@ -84,7 +76,6 @@
         padding: $spacing-sm $spacing-lg;
         border-radius: $radius-sm;
         background-color: $color-50;
-        color: $color-950;
         box-shadow: 0px 0px 0px 2px $color-950;
         @include transition-properties;
 
@@ -92,16 +83,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: $color-50;
-          padding: $spacing-sm;
           border-radius: $radius-sm;
-          @include transition-properties;
-
-          & > img {
-            width: $font-md;
-            height: $font-md;
-            @include transition-properties;
-          }
         }
 
         @include media-query(large) {

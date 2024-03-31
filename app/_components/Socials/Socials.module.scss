@@ -13,7 +13,7 @@
     padding: $spacing-xs $spacing-sm;
     @include transition-properties;
       &:hover {
-        color: $color-400;
+        color: $color-700;
       }
   }
 }
