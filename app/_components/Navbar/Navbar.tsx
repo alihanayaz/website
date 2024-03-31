@@ -3,21 +3,19 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.scss";
 import Link from "next/link";
-import Image from "next/image";
 import cn from "classnames";
-import { capitalizeFirstLetter } from "@/_lib/helpers";
 import Breadcrumb from "./Breadcrumb";
+import Icon from "@/_components/Icon";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
   const routes = [
-    { label: "home", href: "/" },
-    { label: "journey", href: "/journey" },
-    { label: "bookmarks", href: "/bookmarks" },
+    { label: "Home", href: "/" },
+    { label: "Journey", href: "/journey" },
+    { label: "Bookmarks", href: "/bookmarks" },
   ];
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     document.body.style.overflow = isMenuOpen ? "auto" : "hidden";
@@ -26,13 +24,7 @@ export function Navbar() {
   return (
     <div className={styles.navbar}>
       <div className={styles.menuButton} onClick={toggleMenu}>
-        <Image
-          src="/menu.svg"
-          width={24}
-          height={24}
-          alt="menu"
-          priority={true}
-        ></Image>
+        <Icon name="Menu" size="large" />
       </div>
       <Breadcrumb pathname={pathname} />
       <div
@@ -52,15 +44,9 @@ export function Navbar() {
                 key={i}
               >
                 <div className={styles.icon}>
-                  <Image
-                    src={`/${link.label}.svg`}
-                    width={24}
-                    height={24}
-                    alt={link.label}
-                    priority={true}
-                  ></Image>
+                  <Icon name={link.label} />
                 </div>
-                <span>{capitalizeFirstLetter(link.label)}</span>
+                <span>{link.label}</span>
               </Link>
             );
           })}

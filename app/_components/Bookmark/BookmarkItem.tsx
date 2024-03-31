@@ -1,7 +1,7 @@
 "use client";
 import styles from "./BookmarkItem.module.scss";
-import Image from "next/image";
 import { BookmarkItemProps } from "@/_lib/raindrop/types";
+import Icon from "@/_components/Icon";
 
 export function BookmarkItem({
   title,
@@ -31,14 +31,8 @@ export function BookmarkItem({
         <span>{title}</span>
       </div>
       <span className={styles.link}>
-        <Image
-          src="/link.svg"
-          width={18}
-          height={18}
-          alt="link icon"
-          priority={true}
-        ></Image>
-        {strippedLink}
+        <Icon name="Link" size="small" />
+        <span>{strippedLink}</span>
       </span>
       <div className={styles.textContainer}>
         <p className={styles.excerpt}>{excerpt}</p>
