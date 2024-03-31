@@ -28,8 +28,8 @@ export function Navbar() {
       <div className={styles.menuButton} onClick={toggleMenu}>
         <Image
           src="/menu.svg"
-          width={32}
-          height={32}
+          width={24}
+          height={24}
           alt="menu"
           priority={true}
         ></Image>
