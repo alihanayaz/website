@@ -4,25 +4,18 @@
 
 .profile {
   display: flex;
-  align-items: center;
-  gap: $spacing-md;
+  flex-direction: column;
+  justify-content: center;
 
-  .profilePhoto {
-    background-color: $color-700;
-    border-radius: $radius-xl;
-    padding: $spacing-xs;
-    box-shadow: $color-700 0px 5px 15px;
+  h1 {
+    font-size: $font-lg;
+    font-weight: 500;
   }
 
-  .profileInfo {
+  .location {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
     gap: $spacing-xs;
-    cursor: default;
-
-    h1 {
-      font-size: $font-lg;
-    }
+    font-size: $font-sm;
   }
 }

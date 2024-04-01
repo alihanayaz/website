@@ -4,7 +4,7 @@
 .timelineItem {
   display: flex;
   position: relative;
-  border-left: 1px solid $color-700;
+  border-left: 1px solid $color-500;
 
   .timelineItemContent {
     margin: 0 0 $spacing-xxl $spacing-md;
@@ -15,7 +15,7 @@
       height: 0.75rem;
       position: absolute;
       left: -0.375rem;
-      border-radius: $radius-xl;
+      border-radius: $radius-full;
       margin-top: $spacing-sm;
     }
 
@@ -41,7 +41,7 @@
       }
 
       .duration {
-        color: $color-700;
+        color: $color-500;
         margin-bottom: $spacing-sm;
       }
 

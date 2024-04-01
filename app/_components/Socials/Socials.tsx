@@ -1,5 +1,6 @@
 import styles from "./Socials.module.scss";
 import socialsData from "@/_data/socials.json";
+import Icon from "@/_components/Icon";
 
 export function Socials() {
   return (
@@ -12,6 +13,7 @@ export function Socials() {
             target="_blank"
             rel="noopener noreferrer"
           >
+            <Icon name={social.name} />
             {social.name}
           </a>
         );

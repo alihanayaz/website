@@ -9,7 +9,7 @@
 
   & > li:not(.activeBreadcrumb):hover {
     @include transition-properties;
-    color: $color-700;
+    color: $color-500;
   }
 
   .activeBreadcrumb {

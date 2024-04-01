@@ -24,13 +24,9 @@ export function Navbar() {
   return (
     <div className={styles.navbar}>
       <div className={styles.menuButton} onClick={toggleMenu}>
-        <Icon name="Menu" size="large" />
+        <Icon name="Menu" />
       </div>
-      <Breadcrumb pathname={pathname} />
-      <div
-        className={cn(styles.list, { [styles.open]: isMenuOpen })}
-        onClick={toggleMenu}
-      >
+      <div className={cn(styles.list, { [styles.open]: isMenuOpen })}>
         <div className={styles.menuContainer}>
           {routes.map((link, i) => {
             const isActive =
@@ -42,6 +38,7 @@ export function Navbar() {
                   [styles.active]: isActive,
                 })}
                 key={i}
+                onClick={isMenuOpen ? toggleMenu : undefined}
               >
                 <div className={styles.icon}>
                   <Icon name={link.label} />
@@ -50,8 +47,18 @@ export function Navbar() {
               </Link>
             );
           })}
+          <div
+            onClick={toggleMenu}
+            className={cn(styles.listItem, styles.closeButton)}
+          >
+            <div className={styles.icon}>
+              <Icon name="Close" />
+            </div>
+            <span>Close</span>
+          </div>
         </div>
       </div>
+      <Breadcrumb pathname={pathname} />
     </div>
   );
 }
