@@ -6,14 +6,16 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: $spacing-md;
+  gap: $spacing-lg;
   margin-bottom: $spacing-lg;
 
   & > a {
-    padding: $spacing-xs $spacing-sm;
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
     @include transition-properties;
       &:hover {
-        color: $color-700;
+        color: $color-500;
       }
   }
 }
