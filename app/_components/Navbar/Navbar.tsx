@@ -16,6 +16,7 @@ export function Navbar() {
     { label: "Journey", href: "/journey" },
     { label: "Bookmarks", href: "/bookmarks" },
   ];
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     document.body.style.overflow = isMenuOpen ? "auto" : "hidden";

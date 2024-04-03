@@ -1,11 +1,11 @@
 import styles from "./Socials.module.scss";
-import socialsData from "@/_data/socials.json";
+import { SOCIALS } from "@/_lib/constants";
 import Icon from "@/_components/Icon";
 
 export function Socials() {
   return (
     <div className={styles.socials}>
-      {socialsData.map((social, i) => {
+      {SOCIALS.map((social, i) => {
         return (
           <a
             href={social.url}
