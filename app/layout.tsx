@@ -3,12 +3,34 @@ import { Inter } from "next/font/google";
 import "@/globals.scss";
 import Navbar from "@/_components/Navbar";
 import Socials from "@/_components/Socials";
+import { META_DATA, TWITTER_USERNAME } from "@/_lib/constants";
 
-const spaceGrotesk = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Alihan Ayaz",
-  description: "Software Developer based in Istanbul, Turkey",
+  metadataBase: new URL("https://alihan.dev"),
+  title: META_DATA.title,
+  description: META_DATA.description,
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: META_DATA.title,
+    description: META_DATA.description,
+    url: "/",
+    siteName: META_DATA.title,
+    images: "/api/og",
+    locale: "en_IE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: TWITTER_USERNAME,
+  },
 };
 
 export default function RootLayout({
@@ -18,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${spaceGrotesk.className}`}>
+      <body className={`${inter.className}`}>
         <svg width="100%" height="100%">
           <filter id="filterNoise">
             <feTurbulence
