@@ -4,10 +4,10 @@ export const runtime = "edge";
 
 export async function GET() {
   const imageData = await fetch(
-    new URL("/public/gradient.png", import.meta.url)
+    new URL("/assets/gradient.png", import.meta.url)
   ).then((res) => res.arrayBuffer());
   const fontData = await fetch(
-    new URL("/assets/Inter.ttf", import.meta.url)
+    new URL("/assets/Inter.woff2", import.meta.url)
   ).then((res) => res.arrayBuffer());
 
   const base64ImageData = Buffer.from(imageData).toString("base64");
