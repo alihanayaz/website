@@ -10,10 +10,11 @@ export function BookmarkItem({
   excerpt,
 }: BookmarkItemProps) {
   const strippedLink = link.replace(/(^\w+:|^)\/\/([^/]+).*/, "$2");
+  const href = `${link}?ref=alihan.dev`;
   return (
     <a
       className={styles.bookmarkItem}
-      href={link}
+      href={href}
       target="_blank"
       rel="noreferrer noopener"
     >

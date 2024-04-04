@@ -1,5 +1,5 @@
-import Error from "@/_components/Error";
+import { redirect } from "next/navigation";
 
 export default function NotFound() {
-  return <Error />;
+  redirect("/");
 }
