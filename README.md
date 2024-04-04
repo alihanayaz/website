@@ -1,3 +1,5 @@
-# Portfolio Website
+# website
 
-This website is designed to showcase my skills, projects, and experiences to potential employers, clients, or anyone interested in learning more about me.
+![alihan.dev — Alihan Ayaz](cover.png)
+[&rarr; alihan.dev](https://alihan.dev)
+

@@ -1,6 +1,6 @@
 import "server-only";
 import { cache } from "react";
-import collectionIds from "@/_data/bookmarkCollectionIds.json";
+import { BOOKMARK_COLLECTIONS } from "@/_lib/constants";
 
 const raindropApiUrl = "https://api.raindrop.io/rest/v1";
 const revalidateTime = 60 * 60 * 24; // 24 hours
@@ -21,7 +21,7 @@ export const getBookmarkCollections = cache(async () => {
     });
     const responseData = await response.json();
     const filteredData = await responseData.items.filter(
-      (item: any) => item.count > 0 && collectionIds.includes(item._id)
+      (item: any) => item.count > 0 && BOOKMARK_COLLECTIONS.includes(item._id)
     );
     return filteredData;
   } catch (error) {

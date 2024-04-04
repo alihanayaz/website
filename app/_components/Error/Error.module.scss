@@ -1,0 +1,13 @@
+@use "variables" as *;
+
+.errorWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-md;
+
+  h2 {
+    font-size: $font-xl;
+  }
+}
