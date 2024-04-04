@@ -7,7 +7,7 @@ export async function GET() {
     new URL("/assets/gradient.png", import.meta.url)
   ).then((res) => res.arrayBuffer());
   const fontData = await fetch(
-    new URL("/assets/Inter.woff2", import.meta.url)
+    new URL("/assets/Inter.ttf", import.meta.url)
   ).then((res) => res.arrayBuffer());
 
   const base64ImageData = Buffer.from(imageData).toString("base64");
@@ -26,7 +26,7 @@ export async function GET() {
           fontFamily: "Inter",
           fontSize: 100,
           backgroundImage: `url(${backgroundImageUrl})`,
-          backgroundSize: "cover",
+          backgroundSize: "100% 100%",
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -35,7 +35,7 @@ export async function GET() {
     ),
     {
       width: 1200,
-      height: 600,
+      height: 630,
       fonts: [
         {
           name: "Inter",

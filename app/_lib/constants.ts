@@ -28,7 +28,7 @@ export const TIMELINE_CONTENT = [
     title: "",
     duration: "to this day",
     detail:
-      "As I continue to navigate the exciting crossroads of language and technology, I'm poised to leverage my multidisciplinary expertise to drive innovation, foster meaningful connections, and shape the digital landscape in profound ways.        ",
+      "As I continue to navigate the exciting crossroads of language and technology, I'm poised to leverage my multidisciplinary expertise to drive innovation, foster meaningful connections, and shape the digital landscape in profound ways.",
   },
   {
     year: "2022",
@@ -49,6 +49,6 @@ export const TIMELINE_CONTENT = [
     title: "First Line of Code",
     duration: "the beginning",
     detail:
-      "I wrote my first line of real code that started this journey. Driven by a desire to blend creativity with technical prowess, I embarked on a journey into frontend development. Through self-directed learning and hands-on projects, I honed my skills in HTML, CSS, and JavaScript, laying the foundation for a rewarding career in web development.        ",
+      "I wrote my first line of real code that started this journey. Driven by a desire to blend creativity with technical prowess, I embarked on a journey into frontend development. Through self-directed learning and hands-on projects, I honed my skills in HTML, CSS, and JavaScript, laying the foundation for a rewarding career in web development.",
   },
 ];
