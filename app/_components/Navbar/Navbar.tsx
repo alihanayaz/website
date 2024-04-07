@@ -15,6 +15,7 @@ export function Navbar() {
     { label: "Home", href: "/" },
     { label: "Journey", href: "/journey" },
     { label: "Bookmarks", href: "/bookmarks" },
+    { label: "Notebook", href: "/notebook"}
   ];
 
   const toggleMenu = () => {

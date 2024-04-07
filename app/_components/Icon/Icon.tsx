@@ -10,6 +10,7 @@ import {
   Earth,
   Linkedin as LinkedIn,
   Github,
+  Notebook,
 } from "lucide-react";
 
 const TwitterIcon: React.FC<LucideProps> = ({ size }) => (
@@ -43,6 +44,7 @@ const iconMap: { [key: string]: React.FC<LucideProps> } = {
   LinkedIn,
   Github,
   Twitter: TwitterIcon,
+  Notebook
 };
 
 const sizeMap = {

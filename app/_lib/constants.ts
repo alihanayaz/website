@@ -1,3 +1,5 @@
+export const REVALIDATE_TIME = 60 * 60 * 24; // 24 hours
+
 export const META_DATA = {
   title: "Alihan Ayaz",
   description: "Software Developer based in Istanbul, Turkey",
