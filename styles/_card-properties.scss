@@ -2,7 +2,7 @@
 @use "variables" as *;
 @use "media-queries" as *;
 
-@mixin bookmark-properties {
+@mixin card-properties {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

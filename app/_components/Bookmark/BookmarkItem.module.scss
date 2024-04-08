@@ -1,9 +1,9 @@
-@use "bookmark" as *;
+@use "card-properties" as *;
 @use "variables" as *;
 @use "text-ellipsis" as *;
 
 .bookmarkItem {
-  @include bookmark-properties;
+  @include card-properties;
   align-items: flex-start;
 
   .imageContainer {
