@@ -7,6 +7,7 @@ import PortableContent from "@/_components/PortableContent";
 import { notFound } from "next/navigation";
 
 export const dynamicParams = false;
+export const dynamic = "auto";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();

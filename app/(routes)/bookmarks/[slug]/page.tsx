@@ -17,11 +17,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BookmarkPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const bookmarkCollections = await getBookmarkCollections();
   const currentCollection = await bookmarkCollections.find(

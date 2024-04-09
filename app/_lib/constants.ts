@@ -1,4 +1,4 @@
-export const REVALIDATE_TIME = 60 * 60 * 24; // 24 hours
+export const REVALIDATE_TIME = 60 * 60 * 12; // 12 hours
 
 export const META_DATA = {
   title: "Alihan Ayaz",
@@ -23,3 +23,8 @@ export const SOCIALS = [
 export const TWITTER_USERNAME = "@alhnayz";
 
 export const BOOKMARK_COLLECTIONS = [42772176, 43013688, 43013690];
+
+export const CONTENT_TYPES = {
+  POST: "post",
+  TIMELINE: "timeline",
+};
