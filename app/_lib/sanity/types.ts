@@ -5,3 +5,10 @@ export interface PostProps {
   image: string;
   _createdAt: string;
 }
+
+export interface TimelineProps {
+  year: string;
+  title: string;
+  duration: string;
+  detail: string;
+}

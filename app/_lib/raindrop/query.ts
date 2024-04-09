@@ -26,8 +26,6 @@ export const getBookmarkCollections = cache(async () => {
   }
 });
 
-//getOneBookmark
-
 export const getBookmarks = cache(async (id: string) => {
   try {
     const response = await fetch(`${raindropApiUrl}/raindrops/${id}`, options);

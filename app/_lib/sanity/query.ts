@@ -29,6 +29,19 @@ export const getPost = cache(async (slug: string) => {
   return data;
 });
 
+export const getTimeline = cache(async () => {
+  const query = `
+    *[_type == "timeline"] | order(_createdAt desc) {
+      title,
+      year,
+      duration,
+      detail
+      }
+    `;
+  const data = await client.fetch(query);
+  return data;
+});
+
 const builder = imageUrlBuilder(client);
 
 export function urlFor(source: string) {
