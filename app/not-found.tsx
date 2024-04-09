@@ -1,5 +1,5 @@
-import Error from "@/_components/Error";
+import MessageDisplay from "@/_components/MessageDisplay";
 
 export default function NotFound() {
-  return <Error />;
+  return <MessageDisplay type="notFound" />;
 }
