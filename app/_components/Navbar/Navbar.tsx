@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.scss";
 import Link from "next/link";
 import cn from "classnames";
-import Breadcrumb from "./Breadcrumb";
 import Icon from "@/_components/Icon";
 
 export function Navbar() {
@@ -60,7 +59,6 @@ export function Navbar() {
           </div>
         </div>
       </div>
-      <Breadcrumb pathname={pathname} />
     </div>
   );
 }

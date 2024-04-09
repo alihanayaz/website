@@ -5,13 +5,25 @@ import imageUrlBuilder from "@sanity/image-url";
 
 export const getAllPosts = cache(async () => {
   const query = `
-    *[_type == "post"] {
+    *[_type == "post"] | order(_createdAt desc) {
         title,
         "slug": slug.current,
         excerpt,
         "image": coverImage.asset._ref,
         _createdAt
       }
+    `;
+  const data = await client.fetch(query);
+  return data;
+});
+
+export const getPost = cache(async (slug: string) => {
+  const query = `
+    *[_type == "post" && slug.current == '${slug}'] {
+        title,
+        content,
+        _createdAt
+      }[0]
     `;
   const data = await client.fetch(query);
   return data;
