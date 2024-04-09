@@ -3,7 +3,9 @@ import { Inter } from "next/font/google";
 import "@/globals.scss";
 import Navbar from "@/_components/Navbar";
 import Socials from "@/_components/Socials";
-import { META_DATA, TWITTER_USERNAME } from "@/_lib/constants";
+import { META_DATA, TWITTER_USERNAME, REVALIDATE_TIME } from "@/_lib/constants";
+
+export const revalidate = REVALIDATE_TIME;
 
 const inter = Inter({ subsets: ["latin"] });
 
