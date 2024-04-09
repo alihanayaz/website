@@ -1,6 +1,5 @@
 @use "card-properties" as *;
 @use "variables" as *;
-@use "text-ellipsis" as *;
 @use "image-properties" as *;
 
 .bookmarkItem {
@@ -9,16 +8,6 @@
 
   .imageContainer {
     @include image-properties;
-  }
-
-  .textContainer {
-    @include text-ellipsis($lines: 2);
-  }
-
-  .excerpt {
-    color: $color-500;
-    gap: $spacing-xs;
-    font-size: $font-sm;
   }
 
   .link {

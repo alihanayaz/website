@@ -23,15 +23,7 @@
     }
   }
 
-  .postContent {
-    display: flex;
-    flex-direction: column;
+  .textContainer {
     padding: 0 $spacing-lg;
-    width: 100%;
-
-    .excerpt {
-      color: $color-500;
-      font-size: $font-sm;
-    }
   }
 }

@@ -9,8 +9,10 @@ export function Post({ title, excerpt, slug, image, _createdAt }: PostProps) {
         <img src={image} alt={title} />
         <span>{_createdAt}</span>
       </div>
-      <div className={styles.postContent}>
+      <div className={styles.textContainer}>
         <h1>{title}</h1>
+      </div>
+      <div className={styles.textContainer}>
         <span className={styles.excerpt}>{excerpt}</span>
       </div>
     </Link>

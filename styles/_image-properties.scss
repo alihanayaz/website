@@ -1,6 +1,23 @@
 @use "variables" as *;
 
 @mixin image-properties {
+  @keyframes reveal {
+    0% {
+      filter: brightness(1) blur(15px);
+      opacity: 0;
+      scale: 1.0125;
+    }
+    10% {
+      filter: brightness(1.25) blur(10px);
+      opacity: 1;
+    }
+    100% {
+      filter: brightness(1) blur(0);
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
   position: relative;
   width: 100%;
   padding-top: 56.25%;
@@ -14,5 +31,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    animation: reveal 0.7s ease-in-out;
   }
 }
