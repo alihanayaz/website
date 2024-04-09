@@ -21,7 +21,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-bottom: $spacing-xl;
+  margin-bottom: calc($spacing-xl * 2);
   gap: $spacing-md;
 
   .menuButton {

@@ -1,4 +1,4 @@
-import Section from "@/_components/Section";
+import Heading from "@/_components/Heading";
 import { getBookmarkCollections, getBookmarks } from "@/_lib/raindrop/query";
 import {
   BookmarkItemProps,
@@ -29,8 +29,10 @@ export default async function BookmarkPage({
   const bookmarks = await getBookmarks(currentCollection._id);
 
   return (
-    <Section>
-      <h3>{currentCollection.title}</h3>
+    <>
+      <Heading>
+        <h1>{currentCollection.title}</h1>
+      </Heading>
       <div className={styles.bookmarkItemContainer}>
         {bookmarks.map((bookmark: BookmarkItemProps) => {
           return (
@@ -45,6 +47,6 @@ export default async function BookmarkPage({
           );
         })}
       </div>
-    </Section>
+    </>
   );
 }

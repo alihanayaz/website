@@ -1,4 +1,4 @@
-import Section from "@/_components/Section";
+import Heading from "@/_components/Heading";
 import { getBookmarkCollections } from "@/_lib/raindrop/query";
 import { BookmarkCollectionProps } from "@/_lib/raindrop/types";
 import { BookmarkCollection } from "@/_components/Bookmark";
@@ -8,13 +8,13 @@ export default async function Page() {
 
   return (
     <>
-      <Section>
-        <h3>My Personal Directory of Bookmarks</h3>
+      <Heading>
+        <h1>My Personal Directory of Bookmarks</h1>
         <p>
           Explore my curated collection of bookmarks, where I&apos;ve gathered
           valuable resources and insightful reads.
         </p>
-      </Section>
+      </Heading>
       {bookmarkCollections.map((bookmark: BookmarkCollectionProps) => {
         return (
           <BookmarkCollection

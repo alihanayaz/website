@@ -1,11 +1,13 @@
-import Section from "@/_components/Section";
+import Heading from "@/_components/Heading";
 import Timeline from "@/_components/Timeline";
 
 export default function Page() {
   return (
-    <Section>
-      <h3>My Journey So Far</h3>
+    <>
+      <Heading>
+        <h1>My Journey So Far</h1>
+      </Heading>
       <Timeline />
-    </Section>
+    </>
   );
 }
