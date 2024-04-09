@@ -4,6 +4,7 @@ import { PostProps } from "@/_lib/sanity/types";
 import { formatDate } from "@/_lib/helpers";
 import Heading from "@/_components/Heading";
 import PortableContent from "@/_components/PortableContent";
+import { notFound } from "next/navigation";
 
 export const dynamicParams = false;
 
@@ -17,6 +18,7 @@ export async function generateStaticParams() {
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const post = await getPost(slug);
+  !post && notFound();
   const { title, content, _createdAt } = post;
 
   return (

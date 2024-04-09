@@ -6,6 +6,7 @@ import {
 } from "@/_lib/raindrop/types";
 import { BookmarkItem } from "@/_components/Bookmark";
 import styles from "./page.module.scss";
+import { notFound } from "next/navigation";
 
 export const dynamicParams = false;
 
@@ -26,6 +27,7 @@ export default async function BookmarkPage({
   const currentCollection = await bookmarkCollections.find(
     (bookmark: BookmarkCollectionProps) => bookmark.slug === slug
   );
+  !currentCollection && notFound();
   const bookmarks = await getBookmarks(currentCollection._id);
 
   return (

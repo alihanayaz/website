@@ -4,9 +4,11 @@ import { formatDate } from "@/_lib/helpers";
 import { PostProps } from "@/_lib/sanity/types";
 import Post from "@/_components/Posts";
 import Heading from "@/_components/Heading";
+import { notFound } from "next/navigation";
 
 export default async function Page() {
-  const data = await getAllPosts();
+  const posts = await getAllPosts();
+  !posts && notFound();
   return (
     <>
       <Heading>
@@ -17,7 +19,7 @@ export default async function Page() {
         </p>
       </Heading>
       <div className={styles.postContainer}>
-        {data.map((post: PostProps, id: number) => {
+        {posts.map((post: PostProps, id: number) => {
           return (
             <Post
               key={id}
