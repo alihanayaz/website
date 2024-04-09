@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.scss";
 import Link from "next/link";
 import cn from "classnames";
-import Breadcrumb from "./Breadcrumb";
 import Icon from "@/_components/Icon";
 
 export function Navbar() {
@@ -15,6 +14,7 @@ export function Navbar() {
     { label: "Home", href: "/" },
     { label: "Journey", href: "/journey" },
     { label: "Bookmarks", href: "/bookmarks" },
+    { label: "Notebook", href: "/notebook"}
   ];
 
   const toggleMenu = () => {
@@ -59,7 +59,6 @@ export function Navbar() {
           </div>
         </div>
       </div>
-      <Breadcrumb pathname={pathname} />
     </div>
   );
 }

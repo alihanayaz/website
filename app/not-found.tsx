@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import MessageDisplay from "@/_components/MessageDisplay";
 
 export default function NotFound() {
-  redirect("/");
+  return <MessageDisplay type="notFound" />;
 }

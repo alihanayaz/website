@@ -1,4 +1,4 @@
-import Section from "@/_components/Section";
+import Heading from "@/_components/Heading";
 import { getBookmarkCollections, getBookmarks } from "@/_lib/raindrop/query";
 import {
   BookmarkItemProps,
@@ -6,6 +6,7 @@ import {
 } from "@/_lib/raindrop/types";
 import { BookmarkItem } from "@/_components/Bookmark";
 import styles from "./page.module.scss";
+import { notFound } from "next/navigation";
 
 export const dynamicParams = false;
 
@@ -16,21 +17,20 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BookmarkPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const bookmarkCollections = await getBookmarkCollections();
   const currentCollection = await bookmarkCollections.find(
     (bookmark: BookmarkCollectionProps) => bookmark.slug === slug
   );
+  !currentCollection && notFound();
   const bookmarks = await getBookmarks(currentCollection._id);
 
   return (
-    <Section>
-      <h3>{currentCollection.title}</h3>
+    <>
+      <Heading>
+        <h1>{currentCollection.title}</h1>
+      </Heading>
       <div className={styles.bookmarkItemContainer}>
         {bookmarks.map((bookmark: BookmarkItemProps) => {
           return (
@@ -45,6 +45,6 @@ export default async function BookmarkPage({
           );
         })}
       </div>
-    </Section>
+    </>
   );
 }

@@ -1,9 +1,9 @@
-@use "bookmark" as *;
+@use "card-properties" as *;
 @use "variables" as *;
 @use "media-queries" as *;
 
 .collection {
-  @include bookmark-properties;
+  @include card-properties;
   margin-bottom: $spacing-md;
   padding: $spacing-sm;
 

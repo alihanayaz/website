@@ -1,12 +1,14 @@
-import styles from "./Timeline.module.scss";
 import TimelineItem from "./TimelineItem";
-import { TIMELINE_CONTENT } from "@/_lib/constants";
+import { getTimeline } from "@/_lib/sanity/query";
+import { TimelineProps } from "@/_lib/sanity/types";
+import { notFound } from "next/navigation";
 
-export function Timeline() {
+export async function Timeline() {
+  const timeline = await getTimeline();
+  !timeline && notFound();
   return (
-    <div className={styles.timelineContainer}>
-      <h3>My Journey So Far</h3>
-      {TIMELINE_CONTENT.map((item, i) => (
+    <div>
+      {timeline.map((item: TimelineProps, i: number) => (
         <TimelineItem key={i} item={item} />
       ))}
     </div>

@@ -1,13 +1,12 @@
 @use "variables" as *;
 
-.errorWrapper {
+.messageDisplay {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: $spacing-md;
 
-  h2 {
+  h1 {
     font-size: $font-xl;
   }
 }

@@ -1,17 +1,27 @@
 @use "transitions" as *;
 @use "variables" as *;
 @use "media-queries" as *;
+@use "text-ellipsis" as *;
 
-@mixin bookmark-properties {
+@mixin card-properties {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   background-color: $color-transparent-50;
   border-radius: $radius-sm;
-  padding: $spacing-lg;
+  padding: $spacing-md;
   gap: $spacing-sm;
   box-shadow: 0px 0px 0px 1px $color-500;
+
+  .textContainer {
+    @include text-ellipsis($lines: 2);
+  }
+
+  .excerpt {
+    color: $color-500;
+    font-size: $font-sm;
+  }
 
   @include media-query(large) {
     @include transition-properties;

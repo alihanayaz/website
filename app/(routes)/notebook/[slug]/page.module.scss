@@ -1,0 +1,35 @@
+@use "variables" as *;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-top: $spacing-xl;
+
+  h3 {
+    font-weight: bold;
+    line-height: $spacing-lg;
+    width: max-content;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: $spacing-xs;
+      &::before {
+        content: "#";
+        position: absolute;
+        left: -1rem;
+      }
+    }
+  }
+
+  & > *:not(:last-child) {
+    margin-bottom: $spacing-md;
+  }
+}
+
+.date {
+  color: $color-500;
+  padding: 0 $spacing-xs;
+  font-size: $font-sm;
+}
