@@ -2,7 +2,7 @@
 @use "variables" as *;
 @use "image-properties" as *;
 
-.bookmarkItem {
+.wrapper {
   @include card-properties;
   align-items: flex-start;
 

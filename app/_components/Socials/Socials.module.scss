@@ -1,7 +1,7 @@
 @use "variables" as *;
 @use "transitions" as *;
 
-.socials {
+.wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,8 +14,8 @@
     align-items: center;
     gap: $spacing-xs;
     @include transition-properties;
-      &:hover {
-        color: $color-500;
-      }
+    &:hover {
+      color: $color-500;
+    }
   }
 }

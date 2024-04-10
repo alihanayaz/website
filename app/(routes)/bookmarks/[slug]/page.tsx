@@ -31,7 +31,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
       <Heading>
         <h1>{currentCollection.title}</h1>
       </Heading>
-      <div className={styles.bookmarkItemContainer}>
+      <div className={styles.container}>
         {bookmarks.map((bookmark: BookmarkItemProps) => {
           return (
             <BookmarkItem

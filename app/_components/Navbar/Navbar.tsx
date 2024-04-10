@@ -14,7 +14,7 @@ export function Navbar() {
     { label: "Home", href: "/" },
     { label: "Journey", href: "/journey" },
     { label: "Bookmarks", href: "/bookmarks" },
-    { label: "Notebook", href: "/notebook"}
+    { label: "Notebook", href: "/notebook" },
   ];
 
   const toggleMenu = () => {
@@ -23,7 +23,7 @@ export function Navbar() {
   };
 
   return (
-    <div className={styles.navbar}>
+    <div className={styles.wrapper}>
       <div className={styles.menuButton} onClick={toggleMenu}>
         <Icon name="Menu" />
       </div>

@@ -1,12 +1,8 @@
 import styles from "./Heading.module.scss";
 
-interface HeadingProps {
-  children: React.ReactNode;
-}
-
-export function Heading({ children }: HeadingProps) {
+export function Heading({ children }: { children: React.ReactNode }) {
   return (
-    <div className={styles.heading}>
+    <div className={styles.wrapper}>
       <div className={styles.content}>{children}</div>
     </div>
   );

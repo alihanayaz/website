@@ -1,5 +1,5 @@
 @use "grid-properties" as *;
 
-.postContainer {
+.container {
   @include grid-properties;
 }

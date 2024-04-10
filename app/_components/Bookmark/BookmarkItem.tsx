@@ -13,7 +13,7 @@ export function BookmarkItem({
   const href = `${link}?ref=alihan.dev`;
   return (
     <a
-      className={styles.bookmarkItem}
+      className={styles.wrapper}
       href={href}
       target="_blank"
       rel="noreferrer noopener"

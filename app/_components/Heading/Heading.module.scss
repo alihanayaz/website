@@ -1,6 +1,6 @@
 @use "variables" as *;
 
-.heading {
+.wrapper {
   margin-bottom: $spacing-lg;
 
   .content {
@@ -8,7 +8,7 @@
     flex-direction: column;
 
     h1 {
-      font-size: $font-lg;
+      font-size: $font-xl;
       font-weight: bold;
       line-height: $spacing-xl;
       margin-bottom: $spacing-md;

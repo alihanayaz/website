@@ -2,7 +2,7 @@
 @use "variables" as *;
 @use "media-queries" as *;
 
-.collection {
+.wrapper {
   @include card-properties;
   margin-bottom: $spacing-md;
   padding: $spacing-sm;
@@ -14,7 +14,7 @@
     gap: $spacing-sm;
   }
 
-  span {
+  .count {
     font-size: $font-sm;
     color: $color-500;
   }

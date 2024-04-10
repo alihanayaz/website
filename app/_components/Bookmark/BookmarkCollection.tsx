@@ -10,12 +10,12 @@ export function BookmarkCollection({
 }: BookmarkCollectionProps) {
   return (
     <div>
-      <Link className={styles.collection} href={`/bookmarks/${slug}`}>
+      <Link className={styles.wrapper} href={`/bookmarks/${slug}`}>
         <div className={styles.title}>
           <Icon name="Collection" />
           <h4>{title}</h4>
         </div>
-        <span>
+        <span className={styles.count}>
           {count} {count > 1 ? "Bookmarks" : "Bookmark"}
         </span>
       </Link>

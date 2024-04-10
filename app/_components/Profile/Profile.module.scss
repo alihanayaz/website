@@ -2,14 +2,14 @@
 @use "media-queries" as *;
 @use "transitions" as *;
 
-.profile {
+.wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-bottom: $spacing-lg;
 
   h1 {
-    font-size: $font-lg;
+    font-size: $font-xl;
     font-weight: 500;
   }
 

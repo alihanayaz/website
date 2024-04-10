@@ -4,7 +4,7 @@ import Icon from "@/_components/Icon";
 
 export function Socials() {
   return (
-    <div className={styles.socials}>
+    <div className={styles.wrapper}>
       {SOCIALS.map((social, i) => {
         return (
           <a

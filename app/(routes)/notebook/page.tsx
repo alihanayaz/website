@@ -2,7 +2,7 @@ import styles from "./page.module.scss";
 import { getAllPosts, urlFor } from "@/_lib/sanity/query";
 import { formatDate } from "@/_lib/helpers";
 import { PostProps } from "@/_lib/sanity/types";
-import Post from "@/_components/Posts";
+import PostCard from "@/_components/PostCard";
 import Heading from "@/_components/Heading";
 import { notFound } from "next/navigation";
 import MessageDisplay from "@/_components/MessageDisplay";
@@ -23,11 +23,11 @@ export default async function Page() {
               into my mind, captured in snippets of thoughts and reflections.
             </p>
           </Heading>
-          <div className={styles.postContainer}>
-            {posts.map((post: PostProps, id: number) => {
+          <div className={styles.container}>
+            {posts.map((post: PostProps, i: number) => {
               return (
-                <Post
-                  key={id}
+                <PostCard
+                  key={i}
                   title={post.title}
                   excerpt={post.excerpt}
                   slug={post.slug}
