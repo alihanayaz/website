@@ -5,24 +5,7 @@
   flex-direction: column;
   margin-top: $spacing-xl;
 
-  h3 {
-    font-weight: bold;
-    width: max-content;
-    position: relative;
-    cursor: pointer;
-
-    &:hover {
-      text-decoration: underline;
-      text-underline-offset: $spacing-xs;
-      &::before {
-        content: "#";
-        position: absolute;
-        left: -1rem;
-      }
-    }
-  }
-
-  & > *:not(:last-child) {
+  & > *:not(:last-child):not(h2) {
     margin-bottom: $spacing-lg;
   }
 }

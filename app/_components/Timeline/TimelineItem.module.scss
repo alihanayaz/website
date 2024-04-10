@@ -7,7 +7,7 @@
   border-left: 1px solid $color-500;
 
   .content {
-    margin: 0 0 $spacing-xxl $spacing-md;
+    margin: 0 0 calc($spacing-xl * 2) $spacing-md;
 
     .bulletPoint {
       background-color: $color-950;
@@ -29,7 +29,7 @@
       line-height: 1;
 
       .title {
-        font-weight: bold;
+        font-weight: 600;
       }
 
       .duration {
@@ -50,7 +50,16 @@
     }
 
     .detail {
-      margin: $spacing-sm 0;
+      margin: $spacing-md 0;
+    }
+
+    .imageContainer {
+      border-radius: $radius-sm;
+      overflow: hidden;
+
+      img {
+        border-radius: $radius-sm;
+      }
     }
   }
 }
