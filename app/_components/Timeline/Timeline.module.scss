@@ -1,0 +1,25 @@
+@use "variables" as *;
+@use "media-queries" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+
+  .group {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: $spacing-md;
+
+    @include media-query(large) {
+      flex-direction: row;
+      gap: $spacing-xl;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: $font-lg;
+    }
+  }
+}

@@ -2,7 +2,7 @@
 @use "media-queries" as *;
 @use "transitions" as *;
 
-.navbar {
+.wrapper {
   @mixin active {
     background-color: $color-950;
     color: $color-50;

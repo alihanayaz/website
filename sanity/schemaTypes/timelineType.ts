@@ -23,5 +23,10 @@ export const timelineType = {
       name: 'detail',
       type: 'text',
     },
+    {
+      title: 'Image',
+      name: 'image',
+      type: 'image',
+    },
   ],
 }

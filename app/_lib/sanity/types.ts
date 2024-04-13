@@ -9,6 +9,7 @@ export interface PostProps {
 export interface TimelineProps {
   year: string;
   title: string;
-  duration: string;
+  duration?: string;
   detail: string;
+  image?: string;
 }

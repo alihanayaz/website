@@ -3,7 +3,7 @@ import Icon from "@/_components/Icon";
 
 export function Profile() {
   return (
-    <div className={styles.profile}>
+    <div className={styles.wrapper}>
         <h1>Alihan Ayaz</h1>
         <h2>Software Developer</h2>
         <div className={styles.location}>

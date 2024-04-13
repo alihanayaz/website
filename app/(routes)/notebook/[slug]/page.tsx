@@ -29,7 +29,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <span className={styles.date}>{formatDate(_createdAt)}</span>
       </Heading>
       <hr />
-      <div className={styles.content}>
+      <div className={styles.container}>
         <PortableContent content={content} />
       </div>
     </>

@@ -1,0 +1,35 @@
+@use "variables" as *;
+
+@mixin link-properties {
+  text-decoration: underline;
+  text-underline-offset: $spacing-xs;
+}
+
+.title {
+  font-weight: 600;
+  font-size: $font-lg;
+  width: max-content;
+  position: relative;
+  margin-bottom: $spacing-md;
+  cursor: pointer;
+
+  &:hover {
+    @include link-properties;
+    &::before {
+      content: "#";
+      position: absolute;
+      left: -1rem;
+    }
+  }
+}
+
+.link {
+  color: $color-blue;
+  &:hover {
+    @include link-properties;
+  }
+}
+
+.image {
+  border-radius: $radius-sm;
+}

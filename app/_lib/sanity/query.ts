@@ -35,7 +35,8 @@ export const getTimeline = cache(async () => {
       title,
       year,
       duration,
-      detail
+      detail,
+      image
       }
     `;
   const data = await client.fetch(query);

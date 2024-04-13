@@ -10,7 +10,7 @@ body {
   background-color: $color-50;
   color: $color-950;
   font-size: $font-md;
-  line-height: $font-lg;
+  line-height: $font-xl;
   letter-spacing: 0.05rem;
   min-height: 100vh;
 
@@ -21,6 +21,11 @@ body {
     position: fixed;
     z-index: 50;
     opacity: 0.7;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 
   .container {

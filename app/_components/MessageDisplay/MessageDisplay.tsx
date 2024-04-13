@@ -15,7 +15,7 @@ export function MessageDisplay({ type }: { type: keyof typeof messageTypes }) {
   const { title, text } = messageTypes[type];
 
   return (
-    <div className={styles.messageDisplay}>
+    <div className={styles.wrapper}>
       <h1>{title}</h1>
       <p>{text}</p>
     </div>
