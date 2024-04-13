@@ -5,6 +5,14 @@
   flex-direction: column;
   margin-top: $spacing-xl;
 
+  strong, em, code, u, del {
+    font: revert;
+  }
+
+  menu, ol, ul {
+    list-style: revert;
+  }
+
   & > *:not(:last-child):not(h2) {
     margin-bottom: $spacing-lg;
   }
