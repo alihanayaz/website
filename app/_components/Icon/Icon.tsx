@@ -1,16 +1,11 @@
 import type { LucideProps } from "lucide-react";
 import {
-  Menu,
-  Sparkles as Home,
-  Bookmark as Bookmarks,
-  Send as Journey,
   FolderOpen as Collection,
   Link2 as Link,
   X as Close,
-  Earth,
   Linkedin as LinkedIn,
   Github,
-  NotebookPen as Notebook,
+  ExternalLink,
 } from "lucide-react";
 
 const TwitterIcon: React.FC<LucideProps> = ({ size }) => (
@@ -33,18 +28,13 @@ const TwitterIcon: React.FC<LucideProps> = ({ size }) => (
 );
 
 const iconMap: { [key: string]: React.FC<LucideProps> } = {
-  Home,
-  Journey,
-  Bookmarks,
-  Menu,
   Collection,
   Link,
   Close,
-  Earth,
   LinkedIn,
   Github,
   Twitter: TwitterIcon,
-  Notebook,
+  ExternalLink,
 };
 
 const sizeMap = {

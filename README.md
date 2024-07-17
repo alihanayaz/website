@@ -12,8 +12,8 @@ The "website" project is a personal digital space, accessible at [alihan.dev](ht
 - `/journey` - Journey page.
 - `/bookmarks` - Bookmarks page.
 - `/bookmarks/[slug]` - Static pre-rendered bookmarks pages using [Raindrop](https://raindrop.io/).
-- `/notebook` - Notebook page.
-- `/notebook/[slug]` - Static pre-rendered notebook pages using [Sanity](https://www.sanity.io/).
+- `/blog` - Blog page.
+- `/blog/[slug]` - Static pre-rendered blog pages using [Sanity](https://www.sanity.io/).
 - `/api` - API routes.
 
 ## Running Locally

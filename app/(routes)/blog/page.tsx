@@ -1,4 +1,3 @@
-import styles from "./page.module.scss";
 import { getAllPosts, urlFor } from "@/_lib/sanity/query";
 import { formatDate } from "@/_lib/helpers";
 import { PostProps } from "@/_lib/sanity/types";
@@ -16,14 +15,12 @@ export default async function Page() {
         <MessageDisplay type="emptyState" />
       ) : (
         <>
-          <Heading>
-            <h1>My Personal Directory of Notes</h1>
-            <p>
-              Step inside my digital notebook, where you&apos;ll find a glimpse
-              into my mind, captured in snippets of thoughts and reflections.
-            </p>
-          </Heading>
-          <div className={styles.container}>
+          <Heading text="My Personal Directory of Notes"></Heading>
+          <p className="mb-6">
+            Step inside my digital notebook, where you&apos;ll find a glimpse
+            into my mind, captured in snippets of thoughts and reflections.
+          </p>
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-4">
             {posts.map((post: PostProps, i: number) => {
               return (
                 <PostCard

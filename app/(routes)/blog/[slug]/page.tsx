@@ -1,4 +1,3 @@
-import styles from "./page.module.scss";
 import { getAllPosts, getPost } from "@/_lib/sanity/query";
 import { PostProps } from "@/_lib/sanity/types";
 import { formatDate } from "@/_lib/helpers";
@@ -24,12 +23,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <Heading>
-        <h1>{title}</h1>
-        <span className={styles.date}>{formatDate(_createdAt)}</span>
-      </Heading>
+      <span className="self-end mb-3 text-sm text-neutral-500">
+        {formatDate(_createdAt)}
+      </span>
+      <Heading text={title}></Heading>
       <hr />
-      <div className={styles.container}>
+      <div className="flex flex-col gap-6 mt-8">
         <PortableContent content={content} />
       </div>
     </>

@@ -7,7 +7,6 @@ import {
 } from "@portabletext/react";
 import { slugify } from "@/_lib/helpers";
 import { urlFor } from "@/_lib/sanity/query";
-import styles from "./PortableContent.module.scss";
 
 export const PortableContent = ({
   content,
@@ -22,7 +21,10 @@ export const PortableContent = ({
     const slug = slugify(joinedChildren);
     const href = `#${slug}`;
     return (
-      <h2 id={slug} className={styles.title}>
+      <h2
+        id={slug}
+        className="relative cursor-pointer text-xl font-semibold hover:underline hover:underline-offset-4 hover:before:absolute hover:before:-left-4 hover:before:content-['#']"
+      >
         <a href={href}>{children}</a>
       </h2>
     );
@@ -38,7 +40,7 @@ export const PortableContent = ({
           <img
             src={urlFor(value.asset).url()}
             alt={value.alt}
-            className={styles.image}
+            className="rounded-lg"
           />
         );
       },
@@ -53,7 +55,7 @@ export const PortableContent = ({
             href={value.href}
             rel={rel}
             target="_blank"
-            className={styles.link}
+            className="text-blue-700 hover:underline hover:underline-offset-4"
           >
             {children}
           </a>

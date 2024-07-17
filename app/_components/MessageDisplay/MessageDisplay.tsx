@@ -1,5 +1,3 @@
-import styles from "./MessageDisplay.module.scss";
-
 const messageTypes = {
   notFound: {
     title: "Not Found",
@@ -15,9 +13,9 @@ export function MessageDisplay({ type }: { type: keyof typeof messageTypes }) {
   const { title, text } = messageTypes[type];
 
   return (
-    <div className={styles.wrapper}>
-      <h1>{title}</h1>
+    <>
+      <h1 className="mb-4 text-2xl">{title}</h1>
       <p>{text}</p>
-    </div>
+    </>
   );
 }
