@@ -4,9 +4,7 @@ import Timeline from "@/_components/Timeline";
 export default function Page() {
   return (
     <>
-      <Heading>
-        <h1>My Journey So Far</h1>
-      </Heading>
+      <Heading text="My Journey So Far"></Heading>
       <Timeline />
     </>
   );

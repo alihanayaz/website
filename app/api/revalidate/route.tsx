@@ -24,8 +24,8 @@ export async function POST(request: Request) {
   switch (contentType) {
     case CONTENT_TYPES.POST:
       if (slug) {
-        revalidatePath(`/notebook/${slug}`);
-        revalidatePath("/notebook");
+        revalidatePath(`/blog/${slug}`);
+        revalidatePath("/blog");
       } else {
         return Response.json(
           {

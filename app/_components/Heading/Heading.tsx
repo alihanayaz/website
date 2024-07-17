@@ -1,9 +1,3 @@
-import styles from "./Heading.module.scss";
-
-export function Heading({ children }: { children: React.ReactNode }) {
-  return (
-    <div className={styles.wrapper}>
-      <div className={styles.content}>{children}</div>
-    </div>
-  );
+export function Heading({ text }: { text: string }) {
+  return <h1 className="mb-6 text-2xl font-medium tracking-tighter">{text}</h1>;
 }

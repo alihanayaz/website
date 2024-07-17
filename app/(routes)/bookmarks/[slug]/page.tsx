@@ -5,7 +5,6 @@ import {
   BookmarkCollectionProps,
 } from "@/_lib/raindrop/types";
 import { BookmarkItem } from "@/_components/Bookmark";
-import styles from "./page.module.scss";
 import { notFound } from "next/navigation";
 
 export const dynamicParams = false;
@@ -21,17 +20,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const bookmarkCollections = await getBookmarkCollections();
   const currentCollection = await bookmarkCollections.find(
-    (bookmark: BookmarkCollectionProps) => bookmark.slug === slug
+    (bookmark: BookmarkCollectionProps) => bookmark.slug === slug,
   );
   !currentCollection && notFound();
   const bookmarks = await getBookmarks(currentCollection._id);
 
   return (
     <>
-      <Heading>
-        <h1>{currentCollection.title}</h1>
-      </Heading>
-      <div className={styles.container}>
+      <Heading text={currentCollection.title}></Heading>
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-4">
         {bookmarks.map((bookmark: BookmarkItemProps) => {
           return (
             <BookmarkItem

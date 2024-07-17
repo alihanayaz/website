@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "@/globals.scss";
+import "@/globals.css";
 import Navbar from "@/_components/Navbar";
-import Socials from "@/_components/Socials";
 import { META_DATA, TWITTER_USERNAME } from "@/_lib/constants";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -40,28 +39,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
-        <svg width="100%" height="100%">
-          <filter id="filterNoise">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.80"
-              numOctaves="4"
-              stitchTiles="stitch"
-            />
-          </filter>
-          <rect width="100%" height="100%" filter="url(#filterNoise)"></rect>
-        </svg>
-        <div className="container">
-          <main>
-            <Navbar />
-            {children}
-          </main>
-          <div className="gradient-wrapper">
-            <div className="gradient"></div>
-          </div>
-        </div>
-        <Socials />
+      <body className={`${inter.className} bg-neutral-50 text-neutral-950`}>
+        <main className="mx-auto mb-40 mt-14 flex max-w-2xl flex-col px-6 antialiased md:px-0">
+          <Navbar />
+          {children}
+        </main>
       </body>
     </html>
   );

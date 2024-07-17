@@ -1,4 +1,3 @@
-import styles from "./Timeline.module.scss";
 import TimelineItem from "./TimelineItem";
 import { getTimeline } from "@/_lib/sanity/query";
 import { TimelineProps } from "@/_lib/sanity/types";
@@ -14,14 +13,17 @@ export async function Timeline() {
 
   const groupedTimeline = groupTimelineByYear(timeline);
   const sortedYears = Object.keys(groupedTimeline).sort(
-    (a, b) => parseInt(b) - parseInt(a)
+    (a, b) => parseInt(b) - parseInt(a),
   );
 
   return (
-    <div className={styles.wrapper}>
+    <div className="flex flex-col gap-8">
       {sortedYears.map((year) => (
-        <div className={styles.group} key={year}>
-          <h2>{year}</h2>
+        <div
+          className="flex flex-col items-baseline gap-4 md:flex-row md:gap-8"
+          key={year}
+        >
+          <h2 className="text-xl font-semibold">{year}</h2>
           <div>
             {groupedTimeline[year].map((item, i) => (
               <TimelineItem key={i} item={item} />
