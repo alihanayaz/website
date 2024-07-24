@@ -32,7 +32,7 @@ Create a `.env` file similar to [`.env.example`](https://github.com/alihanayaz/w
 - [TypeScript](https://www.typescriptlang.org)
 - [React](https://react.dev)
 - [Next.js](https://nextjs.org)
-- [Sass](https://sass-lang.com)
+- [Tailwind CSS](https://tailwindcss.com)
 - [Sanity](https://www.sanity.io)
 - [Raindrop](https://raindrop.io)
 - [Vercel](https://vercel.com)
