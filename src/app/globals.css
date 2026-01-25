@@ -1,12 +1,81 @@
 @import "tailwindcss";
 
+:root {
+  --background: var(--color-zinc-50);
+  --foreground: var(--color-zinc-900);
+
+  --foreground-muted: var(--color-zinc-600);
+  --foreground-subtle: var(--color-zinc-500);
+
+  --border: var(--color-zinc-200);
+  --border-hover: var(--color-zinc-300);
+
+  --decoration: var(--color-zinc-300);
+  --decoration-hover: var(--color-zinc-500);
+
+  --foreground-hover: var(--color-zinc-700);
+  --surface-hover: var(--color-zinc-100);
+}
+
+.dark {
+  --background: var(--color-zinc-900);
+  --foreground: var(--color-zinc-100);
+
+  --foreground-muted: var(--color-zinc-400);
+  --foreground-subtle: var(--color-zinc-500);
+
+  --border: var(--color-zinc-700);
+  --border-hover: var(--color-zinc-600);
+
+  --decoration: var(--color-zinc-600);
+  --decoration-hover: var(--color-zinc-400);
+
+  --foreground-hover: var(--color-zinc-300);
+  --surface-hover: var(--color-zinc-800);
+}
+
+@theme inline {
+  --color-background: var(--background);
+
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-subtle: var(--foreground-subtle);
+
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
+
+  --color-decoration: var(--decoration);
+  --color-decoration-hover: var(--decoration-hover);
+
+  --color-foreground-hover: var(--foreground-hover);
+  --color-surface-hover: var(--surface-hover);
+}
+
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --breakpoint-xs: 30rem;
+  --text-tiny: 0.625rem;
+  --default-transition-duration: 300ms;
 }
 
 @layer base {
   body {
-    @apply font-sans text-pretty antialiased;
+    @apply bg-background text-foreground font-sans text-pretty antialiased;
+  }
+
+  a,
+  button {
+    @apply cursor-pointer outline-hidden;
+  }
+
+  button:focus {
+    @apply outline-hidden;
+  }
+
+  button:disabled,
+  button[disabled] {
+    @apply cursor-not-allowed;
   }
 }
