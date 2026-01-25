@@ -1,5 +1,6 @@
 export const SITE_NAME = "Alihan Ayaz";
 export const SITE_URL = "https://alihanayaz.com";
+export const SITE_DOMAIN = "alihanayaz.com";
 
 export const METADATA = {
   siteUrl: SITE_URL,

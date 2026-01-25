@@ -60,6 +60,10 @@
   --default-transition-duration: 300ms;
 }
 
+@utility link {
+  @apply decoration-decoration hover:decoration-decoration-hover underline decoration-1 underline-offset-4 transition ease-in-out;
+}
+
 @layer base {
   body {
     @apply bg-background text-foreground font-sans text-pretty antialiased;
