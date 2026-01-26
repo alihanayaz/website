@@ -58,6 +58,25 @@
   --breakpoint-xs: 30rem;
   --text-tiny: 0.625rem;
   --default-transition-duration: 300ms;
+
+  --animate-reveal: reveal 0.7s ease-in-out;
+
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+      filter: brightness(1) blur(15px);
+      scale: 1.0125;
+    }
+    10% {
+      opacity: 1;
+      filter: brightness(1.25) blur(10px);
+    }
+    100% {
+      opacity: 1;
+      filter: brightness(1) blur(0);
+      scale: 1;
+    }
+  }
 }
 
 @utility link {
@@ -81,5 +100,10 @@
   button:disabled,
   button[disabled] {
     @apply cursor-not-allowed;
+  }
+
+  img,
+  object {
+    @apply border-border rounded-md border;
   }
 }
