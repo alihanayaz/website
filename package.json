@@ -1,12 +1,18 @@
 {
   "name": "website",
-  "version": "0.1.0",
+  "description": "Alihan Ayaz's personal website and portfolio.",
+  "author": {
+    "name": "Alihan Ayaz",
+    "email": "alihan@alihanayaz.com",
+    "url": "https://alihanayaz.com"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "serve": "next build && next start",
+    "purge": "rm -rf .next"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
