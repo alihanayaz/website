@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: var(--color-zinc-50);
   --foreground: var(--color-zinc-900);
