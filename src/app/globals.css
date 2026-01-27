@@ -87,7 +87,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground font-sans text-pretty antialiased;
+    @apply bg-background text-foreground flex min-h-dvh flex-col font-sans text-pretty antialiased;
   }
 
   a,
