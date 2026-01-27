@@ -1,3 +1,5 @@
+"use client";
+
 import { ComponentType } from "react";
 import dynamic from "next/dynamic";
 import { Skeleton } from "@/components/ui";
