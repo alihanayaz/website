@@ -1,3 +1,5 @@
+import { GitHubIcon, LinkedInIcon, MailIcon } from "@/components/ui/icon";
+
 export const SITE_NAME = "Alihan Ayaz";
 export const SITE_URL = "https://alihanayaz.com";
 export const SITE_DOMAIN = "alihanayaz.com";
@@ -10,3 +12,21 @@ export const METADATA = {
     path: "/",
   },
 };
+
+export const CONTACT = [
+  {
+    title: "Email",
+    href: "mailto:alihan@alihanayaz.com",
+    icon: MailIcon,
+  },
+  {
+    title: "Github",
+    href: "https://github.com/alihanayaz",
+    icon: GitHubIcon,
+  },
+  {
+    title: "LinkedIn",
+    href: "https://www.linkedin.com/in/alihan-ayaz",
+    icon: LinkedInIcon,
+  },
+];
