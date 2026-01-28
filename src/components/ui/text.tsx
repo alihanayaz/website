@@ -10,6 +10,8 @@ const textVariants = cva("leading-relaxed", {
       base: "text-base",
       lg: "text-lg",
       xl: "text-xl",
+      xxl: "text-2xl",
+      xxxl: "text-3xl",
     },
     weight: {
       normal: "font-normal",

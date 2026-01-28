@@ -3,6 +3,7 @@ import { GitHubIcon, LinkedInIcon, MailIcon } from "@/components/ui/icon";
 export const SITE_NAME = "Alihan Ayaz";
 export const SITE_URL = "https://alihanayaz.com";
 export const SITE_DOMAIN = "alihanayaz.com";
+export const PRIMARY_CITY = "Istanbul";
 
 export const METADATA = {
   siteUrl: SITE_URL,
@@ -30,3 +31,7 @@ export const CONTACT = [
     icon: LinkedInIcon,
   },
 ];
+
+export const REVALIDATE = {
+  WEATHER: 60 * 10, // 10 minutes
+};
