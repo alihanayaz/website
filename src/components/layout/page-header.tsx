@@ -1,4 +1,5 @@
 import { Button, Heading, Hyperlink, Icon, Text } from "@/components/ui";
+import { CopyButton } from "@/components/shared";
 import { cn } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react";
 
@@ -17,17 +18,21 @@ export function PageHeader({
 }: PageHeaderProps) {
   return (
     <div className={cn("mb-8 flex flex-col gap-8", className)}>
-      <Button
-        variant="outline"
-        size="icon"
-        tone="muted"
-        className="w-fit"
-        asChild
-      >
-        <Hyperlink href={backHref} variant="plain">
-          <Icon as={ArrowLeft} size={20} />
-        </Hyperlink>
-      </Button>
+      <div className="flex items-center justify-between gap-4">
+        <Button
+          variant="outline"
+          size="icon"
+          tone="muted"
+          className="w-fit"
+          asChild
+        >
+          <Hyperlink href={backHref} variant="plain">
+            <Icon as={ArrowLeft} size={20} />
+          </Hyperlink>
+        </Button>
+        <CopyButton />
+      </div>
+
       <div className="flex flex-col gap-2">
         <Heading as="h1" size="lg">
           {title}
