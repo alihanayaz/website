@@ -12,6 +12,13 @@ export const METADATA = {
     description: `${SITE_NAME}'s personal website and portfolio.`,
     path: "/",
   },
+  bookmarks: {
+    name: "Bookmarks",
+    title: `Bookmarks — ${SITE_NAME}`,
+    description:
+      "A curated collection of bookmarks—insightful articles, captivating reads, and valuable resources.",
+    path: "/bookmarks",
+  },
 };
 
 export const CONTACT = [
@@ -33,5 +40,11 @@ export const CONTACT = [
 ];
 
 export const REVALIDATE = {
+  BOOKMARKS: 60 * 60 * 24 * 2, // 2 days
   WEATHER: 60 * 10, // 10 minutes
+};
+
+export const BOOKMARKS_CONFIG = {
+  BOOKMARKS_PER_PAGE: 20,
+  PUBLIC_BOOKMARK_COLLECTION_ID: 58710200,
 };
