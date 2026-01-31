@@ -108,4 +108,8 @@
   object {
     @apply border-border rounded-md border;
   }
+
+  hr {
+    @apply border-border w-full border-t opacity-50;
+  }
 }
