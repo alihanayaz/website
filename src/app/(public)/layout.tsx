@@ -7,7 +7,7 @@ export default function HomeLayout({
 }>) {
   return (
     <>
-      <main className="bg-background border-border mx-auto flex w-full max-w-5xl flex-1 flex-col border-x py-12">
+      <main className="bg-background border-border mx-auto flex w-full max-w-5xl flex-1 flex-col border-x px-4 py-12 sm:px-8">
         {children}
       </main>
       <Footer />
