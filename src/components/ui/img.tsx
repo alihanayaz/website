@@ -19,6 +19,9 @@ export function Img({
   alt,
   fallback = "/assets/fallback.avif",
   className,
+  fill,
+  quality,
+  preload,
   ...props
 }: ImgProps) {
   const [error, setError] = useState(false);
@@ -42,6 +45,9 @@ export function Img({
     <Image
       src={resolvedSrc}
       alt={alt}
+      fill={fill}
+      quality={quality}
+      preload={preload}
       className={cn("animate-reveal", className)}
       onError={() => setError(true)}
       {...props}
