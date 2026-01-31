@@ -39,6 +39,10 @@ export const CONTACT = [
   },
 ];
 
+export const CONTENT_TYPE = {
+  BOOKMARKS: "bookmarks",
+};
+
 export const REVALIDATE = {
   BOOKMARKS: 60 * 60 * 24 * 2, // 2 days
   WEATHER: 60 * 10, // 10 minutes
