@@ -104,6 +104,24 @@
     @apply cursor-not-allowed;
   }
 
+  ul {
+    li {
+      @apply pl-1;
+    }
+  }
+
+  ol {
+    li::marker {
+      @apply font-medium;
+    }
+  }
+
+  li {
+    p {
+      @apply m-0 inline;
+    }
+  }
+
   img,
   object {
     @apply border-border rounded-md border;

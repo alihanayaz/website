@@ -1,7 +1,6 @@
-import { revalidateTag } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { jsonResponse } from "@/lib/utils";
-import { CONTENT_TYPE } from "@/lib/constants";
-
+import { CONTENT_TYPE, METADATA } from "@/lib/constants";
 const REVALIDATE_SECRET = process.env.REVALIDATE_SECRET;
 
 type RevalidatePayload = {
@@ -32,6 +31,12 @@ export async function POST(request: Request) {
 
   try {
     switch (type) {
+      case CONTENT_TYPE.WRITING:
+        if (slug) {
+          revalidatePath(`${METADATA.writing.path}/${slug}`);
+        }
+        revalidatePath(METADATA.writing.path);
+        break;
       case CONTENT_TYPE.BOOKMARKS:
         revalidateTag("bookmarks", "max");
         break;

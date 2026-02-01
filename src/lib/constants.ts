@@ -3,6 +3,7 @@ import { GitHubIcon, LinkedInIcon, MailIcon } from "@/components/ui/icon";
 export const SITE_NAME = "Alihan Ayaz";
 export const SITE_URL = "https://alihanayaz.com";
 export const SITE_DOMAIN = "alihanayaz.com";
+export const DEFAULT_LOCALE = "en-US";
 export const PRIMARY_CITY = "Istanbul";
 
 export const METADATA = {
@@ -18,6 +19,13 @@ export const METADATA = {
     description:
       "A curated collection of bookmarks—insightful articles, captivating reads, and valuable resources.",
     path: "/bookmarks",
+  },
+  writing: {
+    name: "Writing",
+    title: `Writing — ${SITE_NAME}`,
+    description:
+      "A personal collection of writings—insightful musings, reflections, and everyday lessons on curiosity, growth, and the simple details that shape life.",
+    path: "/writing",
   },
 };
 
@@ -41,6 +49,7 @@ export const CONTACT = [
 
 export const CONTENT_TYPE = {
   BOOKMARKS: "bookmarks",
+  WRITING: "writing",
 };
 
 export const REVALIDATE = {

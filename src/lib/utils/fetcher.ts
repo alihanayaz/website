@@ -3,7 +3,7 @@ type FetchConfig = Omit<RequestInit, "next" | "cache"> & {
   tags?: string[];
 };
 
-type GqlConfig = Omit<FetchConfig, "method" | "body"> & {
+export type GqlConfig = Omit<FetchConfig, "method" | "body"> & {
   query: string;
   variables?: Record<string, unknown>;
 };
