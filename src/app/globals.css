@@ -17,6 +17,16 @@
 
   --foreground-hover: var(--color-zinc-700);
   --surface-hover: var(--color-zinc-100);
+
+  --sh-class: var(--color-blue-600);
+  --sh-identifier: var(--color-zinc-800);
+  --sh-sign: var(--color-zinc-600);
+  --sh-property: var(--color-sky-600);
+  --sh-entity: var(--color-emerald-600);
+  --sh-jsxliterals: var(--color-indigo-600);
+  --sh-string: var(--color-teal-600);
+  --sh-keyword: var(--color-rose-600);
+  --sh-comment: var(--color-zinc-600);
 }
 
 .dark {
@@ -34,6 +44,16 @@
 
   --foreground-hover: var(--color-zinc-300);
   --surface-hover: var(--color-zinc-800);
+
+  --sh-class: var(--color-blue-400);
+  --sh-identifier: var(--color-zinc-200);
+  --sh-sign: var(--color-zinc-400);
+  --sh-property: var(--color-sky-400);
+  --sh-entity: var(--color-emerald-400);
+  --sh-jsxliterals: var(--color-indigo-400);
+  --sh-string: var(--color-teal-400);
+  --sh-keyword: var(--color-rose-400);
+  --sh-comment: var(--color-zinc-400);
 }
 
 @theme inline {
@@ -129,5 +149,22 @@
 
   hr {
     @apply border-border w-full border-t opacity-50;
+  }
+
+  pre {
+    @apply min-w-max p-4 text-sm leading-6;
+
+    code {
+      @apply font-mono whitespace-pre;
+      counter-reset: line-number;
+
+      .sh__line {
+        &:before {
+          @apply text-foreground-subtle mr-6 inline-block w-5 text-right tabular-nums;
+          counter-increment: line-number 1;
+          content: counter(line-number);
+        }
+      }
+    }
   }
 }

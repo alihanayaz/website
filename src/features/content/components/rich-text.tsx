@@ -3,12 +3,15 @@ import {
   documentToReactComponents,
   type Options,
 } from "@contentful/rich-text-react-renderer";
-import type { Content } from "@/features/content";
+import { CodeBlock, type Content } from "@/features/content";
 import { Heading, Hyperlink, Img, Text } from "@/components/ui";
 
 function getOptions(links: Content["links"]): Options {
   const findAsset = (id: string) =>
     links?.assets.block.find((item) => item.sys.id === id);
+
+  const findEntry = (id: string) =>
+    links?.entries?.block.find((item) => item.sys.id === id);
 
   return {
     renderMark: {
@@ -64,6 +67,17 @@ function getOptions(links: Content["links"]): Options {
           {children}
         </blockquote>
       ),
+      [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+        const entry = findEntry(node.data.target.sys.id);
+
+        switch (entry?.__typename) {
+          case "CodeBlock": {
+            return <CodeBlock title={entry.title} code={entry.code} />;
+          }
+          default:
+            return null;
+        }
+      },
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const asset = findAsset(node.data.target.sys.id);
 

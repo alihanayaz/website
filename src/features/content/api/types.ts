@@ -12,11 +12,21 @@ export type ImageAsset = {
   height?: number;
 };
 
+export type CodeBlockEntry = {
+  __typename: "CodeBlock";
+  sys: Sys;
+  title?: string;
+  code: string;
+};
+
 export type ContentLinks = {
   assets: {
     block: ({
       sys: Sys;
     } & ImageAsset)[];
+  };
+  entries?: {
+    block: CodeBlockEntry[];
   };
 };
 

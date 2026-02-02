@@ -79,6 +79,16 @@ export const getWritingEntryBySlug = cache(
                     height
                   }
                 }
+                entries {
+                  block {
+                    __typename
+                    ... on CodeBlock {
+                      sys { id }
+                      title
+                      code
+                    }
+                  }
+                }
               }
             }
           }
