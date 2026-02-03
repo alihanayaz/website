@@ -105,9 +105,13 @@
   @apply decoration-decoration hover:decoration-decoration-hover underline decoration-1 underline-offset-4 transition ease-in-out;
 }
 
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
 @layer base {
   body {
-    @apply bg-background text-foreground flex min-h-dvh flex-col font-sans text-pretty antialiased;
+    @apply bg-background text-foreground flex min-h-dvh flex-col overflow-x-hidden font-sans text-pretty antialiased;
   }
 
   a,
