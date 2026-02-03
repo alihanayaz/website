@@ -57,3 +57,16 @@ export type WritingEntryQuery = {
     items: WritingEntry[];
   };
 };
+
+export type ContentPage = {
+  title: string;
+  slug: string;
+  date: string;
+  content: Content;
+};
+
+export type ContentPageQuery = {
+  contentPageCollection: {
+    items: ContentPage[];
+  };
+};

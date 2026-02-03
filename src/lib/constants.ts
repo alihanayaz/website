@@ -20,6 +20,20 @@ export const METADATA = {
       "A curated collection of bookmarks—insightful articles, captivating reads, and valuable resources.",
     path: "/bookmarks",
   },
+  colophon: {
+    name: "Colophon",
+    title: `Colophon — ${SITE_NAME}`,
+    description:
+      "A behind-the-scenes look at the tools, technologies, and processes that power this website, along with acknowledgments to those who contributed to its creation.",
+    path: "/colophon",
+  },
+  now: {
+    name: "Now",
+    title: `Now — ${SITE_NAME}`,
+    description:
+      "A snapshot of what I'm currently focused on, learning, and exploring in both my personal and professional life.",
+    path: "/now",
+  },
   writing: {
     name: "Writing",
     title: `Writing — ${SITE_NAME}`,
@@ -49,6 +63,7 @@ export const CONTACT = [
 
 export const CONTENT_TYPE = {
   BOOKMARKS: "bookmarks",
+  PAGE: "page",
   WRITING: "writing",
 };
 

@@ -31,6 +31,11 @@ export async function POST(request: Request) {
 
   try {
     switch (type) {
+      case CONTENT_TYPE.PAGE:
+        if (slug) {
+          revalidatePath(`/${slug}`);
+        }
+        break;
       case CONTENT_TYPE.WRITING:
         if (slug) {
           revalidatePath(`${METADATA.writing.path}/${slug}`);

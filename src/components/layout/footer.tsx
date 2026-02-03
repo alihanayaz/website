@@ -1,7 +1,7 @@
-import { Icon, LogoIcon, Text } from "@/components/ui";
+import { Button, Hyperlink, Icon, LogoIcon, Text } from "@/components/ui";
 import { ThemeToggle } from "@/components/shared";
 import { CopyrightIcon } from "lucide-react";
-import { SITE_NAME } from "@/lib/constants";
+import { METADATA, SITE_NAME } from "@/lib/constants";
 
 const year = new Date().getFullYear();
 
@@ -9,7 +9,19 @@ export function Footer() {
   return (
     <footer className="border-border bg-background relative z-12 mt-auto flex w-full gap-4 border-t">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 px-4 pt-4 sm:pb-4">
-        <div className="border-surface-hover flex justify-end border-b pb-4">
+        <div className="border-surface-hover flex justify-between gap-2 border-b pb-4">
+          <div className="flex gap-2">
+            <Button variant="ghost" size="sm" asChild>
+              <Hyperlink href={METADATA.now.path} variant="plain">
+                {METADATA.now.name}
+              </Hyperlink>
+            </Button>
+            <Button variant="ghost" size="sm" asChild>
+              <Hyperlink href={METADATA.colophon.path} variant="plain">
+                {METADATA.colophon.name}
+              </Hyperlink>
+            </Button>
+          </div>
           <ThemeToggle />
         </div>
 

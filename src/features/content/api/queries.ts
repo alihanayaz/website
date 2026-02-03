@@ -2,7 +2,11 @@ import "server-only";
 
 import { cache } from "react";
 import { fetchGql, isDevelopment, type GqlConfig } from "@/lib/utils";
-import type { WritingCollectionQuery, WritingEntryQuery } from "./types";
+import type {
+  ContentPageQuery,
+  WritingCollectionQuery,
+  WritingEntryQuery,
+} from "./types";
 
 const CONTENTFUL_API_BASE_URL = "https://graphql.contentful.com";
 const url = `${CONTENTFUL_API_BASE_URL}/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
@@ -103,5 +107,44 @@ export const getWritingEntryBySlug = cache(
     });
 
     return response?.writingCollection.items[0];
+  },
+);
+
+export const getContentPageBySlug = cache(
+  async (slug: string, preview?: boolean) => {
+    const query = `
+    query ContentPageBySlug($slug: String!, $preview: Boolean!) {
+        contentPageCollection(where: { slug: $slug }, limit: 1, preview: $preview) {
+          items {
+            title
+            slug
+            date
+            content {
+              json
+              links {
+                assets {
+                  block {
+                    sys { id }
+                    url(transform: { format: AVIF, quality: 50 })
+                    title
+                    description
+                    width
+                    height
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `;
+
+    const response = await getContentfulData<ContentPageQuery>({
+      query,
+      variables: { slug },
+      preview,
+    });
+
+    return response?.contentPageCollection.items[0];
   },
 );
