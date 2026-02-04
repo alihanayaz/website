@@ -17,7 +17,7 @@ export const METADATA = {
     name: "Bookmarks",
     title: `Bookmarks — ${SITE_NAME}`,
     description:
-      "A curated collection of bookmarks—insightful articles, captivating reads, and valuable resources.",
+      "My digital archive. A curation of insightful reads, resources, and timeless ideas—gathered for inspiration and future reference.",
     path: "/bookmarks",
   },
   colophon: {
@@ -38,7 +38,7 @@ export const METADATA = {
     name: "Writing",
     title: `Writing — ${SITE_NAME}`,
     description:
-      "A personal collection of writings—insightful musings, reflections, and everyday lessons on curiosity, growth, and the simple details that shape life.",
+      "My digital garden. Essays bridging technology and the humanities—exploring the intersection of code, language, and life.",
     path: "/writing",
   },
 };
