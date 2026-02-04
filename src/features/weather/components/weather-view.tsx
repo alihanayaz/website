@@ -1,7 +1,7 @@
 "use client";
 
 import { useClock } from "@/hooks";
-import { Icon, Text } from "@/components/ui";
+import { Badge, Icon, Text } from "@/components/ui";
 import { MapPin } from "lucide-react";
 
 interface WeatherViewProps {
@@ -14,6 +14,10 @@ interface WeatherViewProps {
   code: number;
 }
 
+function LiveDot() {
+  return <div className="size-1.5 animate-pulse rounded-full bg-emerald-500" />;
+}
+
 export function WeatherView({
   city,
   country,
@@ -24,46 +28,56 @@ export function WeatherView({
   const time = useClock({ timeZone: tzId });
 
   return (
-    <div className="flex flex-col gap-px">
-      <div className="flex items-center gap-1">
-        <Icon as={MapPin} size={12} strokeWidth={2.5} />
-        <Text as="span" size="sm" weight="semibold" className="tracking-tight">
-          {city}, {country}
-        </Text>
+    <div className="flex flex-col justify-between gap-4">
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex items-baseline gap-1">
+          <Icon as={MapPin} size={16} strokeWidth={2} />
+          <Text as="span" weight="medium" className="tracking-tight">
+            {city}, {country}
+          </Text>
+        </div>
+
+        <Badge
+          variant="outline"
+          icon={LiveDot}
+          className="border-emerald-200 bg-emerald-50 text-emerald-600 dark:border-emerald-700 dark:bg-emerald-900 dark:text-emerald-400"
+        >
+          Live
+        </Badge>
       </div>
 
-      <div className="mt-auto flex items-end justify-between">
-        <div className="flex flex-col gap-px">
+      <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-1">
           <Text
             as="span"
-            size="xxxl"
+            size="xl"
             weight="medium"
-            className="tracking-tight tabular-nums"
+            className="leading-none tracking-tight tabular-nums"
           >
             {tempC}°
           </Text>
-          <Text as="span" size="xs" weight="medium" tone="muted">
+          <Text as="span" size="sm" weight="medium" tone="muted">
             {condition}
           </Text>
         </div>
 
-        <div className="flex flex-col items-end gap-px font-mono">
+        <div className="flex flex-col items-end gap-1">
+          <Text
+            as="span"
+            size="xl"
+            weight="medium"
+            className="leading-none tracking-tight tabular-nums"
+          >
+            {time || "--:--"}
+          </Text>
           <Text
             as="span"
             size="xs"
             weight="medium"
-            tone="muted"
+            tone="subtle"
             className="tracking-wide uppercase"
           >
             Local Time
-          </Text>
-          <Text
-            as="span"
-            size="lg"
-            weight="medium"
-            className="tracking-tight tabular-nums"
-          >
-            {time || "--:--"}
           </Text>
         </div>
       </div>

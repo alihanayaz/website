@@ -1,5 +1,6 @@
 import { getCurrentWeather } from "@/features/weather/api/queries";
 import { WeatherView } from "./weather-view";
+import { Card } from "@/components/ui";
 
 export async function WeatherWidget() {
   const weather = await getCurrentWeather();
@@ -16,14 +17,16 @@ export async function WeatherWidget() {
   }
 
   return (
-    <WeatherView
-      city={name}
-      country={country}
-      tzId={tz_id}
-      tempC={Math.round(temp_c)}
-      condition={condition.text}
-      isDay={is_day}
-      code={condition.code}
-    />
+    <Card variant="outline" className="col-span-full">
+      <WeatherView
+        city={name}
+        country={country}
+        tzId={tz_id}
+        tempC={Math.round(temp_c)}
+        condition={condition.text}
+        isDay={is_day}
+        code={condition.code}
+      />
+    </Card>
   );
 }
