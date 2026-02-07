@@ -2,9 +2,31 @@ import { Fragment } from "react";
 import { getWritingEntries } from "@/features/content/api/queries";
 import { PageHeader } from "@/components/layout";
 import { Card, Heading, Hyperlink, Icon, Text } from "@/components/ui";
-import { formatDate } from "@/lib/utils";
+import { formatDate, formatDateTime, formatDateTitle } from "@/lib/utils";
 import { ArrowRight, Calendar } from "lucide-react";
 import { METADATA } from "@/lib/constants";
+
+export function DateTime({
+  date,
+  className,
+}: {
+  date: string | Date;
+  className?: string;
+}) {
+  return (
+    <Text
+      as="time"
+      size="sm"
+      tone="subtle"
+      dateTime={formatDateTime(date)}
+      title={formatDateTitle(date)}
+      className={className}
+    >
+      <Icon as={Calendar} size={16} />
+      {formatDate(date)}
+    </Text>
+  );
+}
 
 export default async function WritingPage() {
   const entries = await getWritingEntries();
@@ -41,17 +63,10 @@ export default async function WritingPage() {
                       {entry.title}
                     </Heading>
 
-                    <Text
-                      as="time"
-                      size="sm"
-                      tone="subtle"
-                      dateTime={entry.date}
-                      title={new Date(entry.date).toUTCString()}
-                      className="order-first inline-flex items-center gap-1 md:col-span-1 md:hidden"
-                    >
-                      <Icon as={Calendar} size={16} />
-                      {formatDate(entry.date)}
-                    </Text>
+                    <DateTime
+                      date={entry.date}
+                      className="order-first inline-flex items-center gap-1 md:hidden"
+                    />
 
                     <Text size="sm" className="line-clamp-2">
                       {entry.description}
@@ -73,17 +88,10 @@ export default async function WritingPage() {
                   </Hyperlink>
                 </Card>
 
-                <Text
-                  as="time"
-                  size="sm"
-                  tone="subtle"
-                  dateTime={entry.date}
-                  title={new Date(entry.date).toUTCString()}
+                <DateTime
+                  date={entry.date}
                   className="order-first hidden items-center gap-1 md:col-span-1 md:inline-flex"
-                >
-                  <Icon as={Calendar} size={16} />
-                  {formatDate(entry.date)}
-                </Text>
+                />
               </article>
 
               {i < entries.length - 1 && <hr className="block md:hidden" />}
