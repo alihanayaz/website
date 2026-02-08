@@ -16,12 +16,17 @@ function getOptions(links: Content["links"]): Options {
   return {
     renderMark: {
       [MARKS.BOLD]: (text) => (
-        <Text as="span" weight="medium">
+        <Text as="span" weight="medium" tone="muted">
           {text}
         </Text>
       ),
       [MARKS.ITALIC]: (text) => (
-        <Text as="span" className="italic">
+        <Text as="span" tone="muted" className="italic">
+          {text}
+        </Text>
+      ),
+      [MARKS.UNDERLINE]: (text) => (
+        <Text as="span" tone="muted" className="underline">
           {text}
         </Text>
       ),
@@ -34,13 +39,30 @@ function getOptions(links: Content["links"]): Options {
           {text}
         </Text>
       ),
+      [MARKS.SUPERSCRIPT]: (text) => (
+        <Text as="span" size="xs" tone="muted" className="align-super">
+          {text}
+        </Text>
+      ),
+      [MARKS.SUBSCRIPT]: (text) => (
+        <Text as="span" size="xs" tone="muted" className="align-sub">
+          {text}
+        </Text>
+      ),
+      [MARKS.STRIKETHROUGH]: (text) => (
+        <Text as="span" tone="muted" className="line-through">
+          {text}
+        </Text>
+      ),
     },
     renderNode: {
       [INLINES.HYPERLINK]: (node, children) => (
         <Hyperlink href={node.data.uri || "#"}>{children}</Hyperlink>
       ),
       [BLOCKS.PARAGRAPH]: (_, children) => (
-        <Text className="mb-6 last:mb-0">{children}</Text>
+        <Text tone="muted" className="mb-6 last:mb-0">
+          {children}
+        </Text>
       ),
       [BLOCKS.HEADING_2]: (_, children) => (
         <Heading as="h2" size="md" className="mt-6 mb-2">

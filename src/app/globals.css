@@ -6,7 +6,7 @@
   --background: var(--color-zinc-50);
   --foreground: var(--color-zinc-900);
 
-  --foreground-muted: var(--color-zinc-600);
+  --foreground-muted: var(--color-zinc-700);
   --foreground-subtle: var(--color-zinc-500);
 
   --border: var(--color-zinc-200);
@@ -15,7 +15,6 @@
   --decoration: var(--color-zinc-300);
   --decoration-hover: var(--color-zinc-500);
 
-  --foreground-hover: var(--color-zinc-700);
   --surface-hover: var(--color-zinc-100);
 
   --sh-class: var(--color-blue-600);
@@ -33,7 +32,7 @@
   --background: var(--color-zinc-900);
   --foreground: var(--color-zinc-100);
 
-  --foreground-muted: var(--color-zinc-400);
+  --foreground-muted: var(--color-zinc-300);
   --foreground-subtle: var(--color-zinc-500);
 
   --border: var(--color-zinc-700);
@@ -42,7 +41,6 @@
   --decoration: var(--color-zinc-600);
   --decoration-hover: var(--color-zinc-400);
 
-  --foreground-hover: var(--color-zinc-300);
   --surface-hover: var(--color-zinc-800);
 
   --sh-class: var(--color-blue-400);
@@ -69,7 +67,6 @@
   --color-decoration: var(--decoration);
   --color-decoration-hover: var(--decoration-hover);
 
-  --color-foreground-hover: var(--foreground-hover);
   --color-surface-hover: var(--surface-hover);
 }
 
