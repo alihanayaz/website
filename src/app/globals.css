@@ -155,7 +155,7 @@
 
   img,
   object {
-    @apply border-border rounded-md border;
+    @apply border-border border;
   }
 
   hr {

@@ -11,8 +11,8 @@ export const CodeBlock = ({ title, code }: CodeBlockProps) => {
   const codeHTML = highlight(code);
 
   return (
-    <div className="border-border mb-6 rounded-md border last:mb-0">
-      <div className="border-border bg-surface-hover flex flex-wrap items-center justify-between gap-2 rounded-t-md border-b px-4 py-2">
+    <div className="border-border mb-6 border last:mb-0">
+      <div className="border-border bg-surface-hover flex flex-wrap items-center justify-between gap-2 border-b px-4 py-2">
         {title && (
           <Text as="span" size="sm">
             {title}

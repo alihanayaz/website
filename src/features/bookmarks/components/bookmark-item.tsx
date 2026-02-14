@@ -10,7 +10,7 @@ export function BookmarkItem(bookmark: BookmarkItem) {
           <Img
             src={bookmark.cover}
             alt={bookmark.title}
-            className="size-full rounded-t-md rounded-b-none border-none object-cover"
+            className="size-full rounded-b-none border-none object-cover"
             fill
           />
         </div>

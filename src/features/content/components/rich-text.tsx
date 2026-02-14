@@ -34,7 +34,7 @@ function getOptions(links: Content["links"]): Options {
         <Text
           as="code"
           size="sm"
-          className="border-border bg-surface-hover rounded-md border px-2 py-0.5 font-mono"
+          className="border-border bg-surface-hover border px-2 py-0.5 font-mono"
         >
           {text}
         </Text>

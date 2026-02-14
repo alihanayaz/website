@@ -38,7 +38,7 @@ const buttonVariants = cva(
     defaultVariants: {
       variant: "solid",
       size: "md",
-      radius: "md",
+      radius: "none",
       tone: "base",
     },
     compoundVariants: [

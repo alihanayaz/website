@@ -34,7 +34,7 @@ const cardVariants = cva(
     defaultVariants: {
       variant: "plain",
       interactive: false,
-      radius: "md",
+      radius: "none",
       padding: "md",
     },
   },
