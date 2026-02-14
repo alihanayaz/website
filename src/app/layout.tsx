@@ -3,7 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { METADATA } from "@/lib/constants";
-import { ThemeProvider } from "@/providers/theme";
+import { NavigationProvider, ThemeProvider } from "@/providers";
 
 export const metadata: Metadata = {
   metadataBase: new URL(METADATA.siteUrl),
@@ -41,7 +41,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <NavigationProvider>{children}</NavigationProvider>
         </ThemeProvider>
       </body>
     </html>

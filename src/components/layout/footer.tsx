@@ -7,7 +7,7 @@ const year = new Date().getFullYear();
 
 export function Footer() {
   return (
-    <footer className="border-border bg-background relative z-12 mt-auto flex w-full gap-4 border-t">
+    <footer className="border-border bg-background relative z-20 mt-auto flex w-full border-t">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 px-4 pt-4 sm:pb-4">
         <div className="border-surface-hover flex justify-between gap-2 border-b pb-4">
           <div className="flex gap-2">

@@ -78,7 +78,17 @@
   --text-tiny: 0.625rem;
   --default-transition-duration: 300ms;
 
+  --animate-fade-in: fade-in 0.2s ease-out;
   --animate-reveal: reveal 0.7s ease-in-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
   @keyframes reveal {
     0% {

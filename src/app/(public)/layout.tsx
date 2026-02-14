@@ -1,4 +1,4 @@
-import { Footer } from "@/components/layout";
+import { Header, Footer } from "@/components/layout";
 
 export default function HomeLayout({
   children,
@@ -7,7 +7,8 @@ export default function HomeLayout({
 }>) {
   return (
     <>
-      <main className="bg-background mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 py-12 sm:px-8">
+      <Header />
+      <main className="bg-background mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 pt-8 pb-12 sm:px-8">
         {children}
       </main>
       <Footer />

@@ -9,6 +9,7 @@ export const PRIMARY_CITY = "Istanbul";
 export const METADATA = {
   siteUrl: SITE_URL,
   root: {
+    name: "Home",
     title: SITE_NAME,
     description: `${SITE_NAME}'s personal website and portfolio.`,
     path: "/",
@@ -42,6 +43,12 @@ export const METADATA = {
     path: "/writing",
   },
 };
+
+export const NAV_ITEMS = [
+  { href: METADATA.root.path, label: METADATA.root.name },
+  { href: METADATA.writing.path, label: METADATA.writing.name },
+  { href: METADATA.bookmarks.path, label: METADATA.bookmarks.name },
+];
 
 export const CONTACT = [
   {
