@@ -68,10 +68,6 @@ export default async function WritingPage() {
                       className="order-first inline-flex items-center gap-1 md:hidden"
                     />
 
-                    <Text size="sm" className="line-clamp-2">
-                      {entry.description}
-                    </Text>
-
                     <Text
                       as="span"
                       size="sm"

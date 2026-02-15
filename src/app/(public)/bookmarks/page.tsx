@@ -1,9 +1,9 @@
 import { Fragment } from "react";
 import { getPublicCollections } from "@/features/bookmarks/api/queries";
 import { PageHeader } from "@/components/layout";
-import { Badge, Card, Heading, Hyperlink, Icon, Text } from "@/components/ui";
+import { Card, Heading, Hyperlink, Icon, Text } from "@/components/ui";
 import { pluralize } from "@/lib/utils";
-import { ArrowRight, Folder } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { METADATA } from "@/lib/constants";
 
 export default async function BookmarksPage() {
@@ -30,33 +30,32 @@ export default async function BookmarksPage() {
                   <Hyperlink
                     href={`${METADATA.bookmarks.path}/${col.slug}`}
                     variant="plain"
-                    className="gap-4"
+                    className="flex flex-row items-center justify-between gap-2 pl-1"
                   >
-                    <div className="flex items-center justify-between gap-2">
-                      <Badge icon={Folder} variant="outline">
-                        Collection
-                      </Badge>
-                      <Icon
-                        as={ArrowRight}
-                        size={20}
-                        className="-translate-x-2 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100"
-                      />
-                    </div>
-
-                    <div className="flex items-center justify-between gap-2 pl-1">
-                      <Heading
-                        id={col.slug}
-                        as="h2"
-                        size="sm"
-                        className="line-clamp-2"
-                      >
-                        {col.title}
-                      </Heading>
+                    <Heading
+                      id={col.slug}
+                      as="h2"
+                      size="sm"
+                      className="line-clamp-2"
+                    >
+                      {col.title}
+                    </Heading>
+                    <div className="flex items-center">
                       {col.count && (
-                        <Text as="span" size="sm" tone="muted">
+                        <Text
+                          as="span"
+                          size="sm"
+                          tone="muted"
+                          className="transition-transform group-hover:-translate-x-1"
+                        >
                           {pluralize(col.count, "bookmark")}
                         </Text>
                       )}
+                      <Icon
+                        as={ArrowRight}
+                        size={16}
+                        className="text-foreground-muted -translate-x-2 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100"
+                      />
                     </div>
                   </Hyperlink>
                 </Card>
