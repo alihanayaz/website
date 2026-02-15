@@ -121,6 +121,10 @@
     @apply bg-background text-foreground flex min-h-dvh flex-col overflow-x-hidden font-sans text-pretty antialiased;
   }
 
+  p {
+    @apply leading-relaxed!;
+  }
+
   a,
   button {
     @apply cursor-pointer outline-hidden;

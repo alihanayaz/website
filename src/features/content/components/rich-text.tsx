@@ -1,3 +1,4 @@
+import React from "react";
 import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
 import {
   documentToReactComponents,
@@ -5,6 +6,16 @@ import {
 } from "@contentful/rich-text-react-renderer";
 import { CodeBlock, type Content } from "@/features/content";
 import { Heading, Hyperlink, Img, Text } from "@/components/ui";
+
+function hasContent(content: unknown): boolean {
+  if (!content) return false;
+  if (typeof content === "string") return content.trim() !== "";
+  if (Array.isArray(content)) return content.some((item) => hasContent(item));
+  if (React.isValidElement(content)) {
+    return hasContent((content.props as { children?: unknown }).children);
+  }
+  return true;
+}
 
 function getOptions(links: Content["links"]): Options {
   const findAsset = (id: string) =>
@@ -65,12 +76,12 @@ function getOptions(links: Content["links"]): Options {
         </Text>
       ),
       [BLOCKS.HEADING_2]: (_, children) => (
-        <Heading as="h2" size="md" className="mt-6 mb-2">
+        <Heading as="h2" size="md" className="mt-6 mb-3">
           {children}
         </Heading>
       ),
       [BLOCKS.HEADING_3]: (_, children) => (
-        <Heading as="h3" size="sm" className="mt-6 mb-2">
+        <Heading as="h3" size="sm" className="mt-6 mb-3">
           {children}
         </Heading>
       ),
@@ -126,6 +137,74 @@ function getOptions(links: Content["links"]): Options {
             )}
           </figure>
         );
+      },
+      [BLOCKS.TABLE]: (_, children) => {
+        const childrenArray = Array.isArray(children) ? children : [children];
+        const headerRows: React.ReactNode[] = [];
+        const bodyRows: React.ReactNode[] = [];
+
+        childrenArray.forEach((child) => {
+          if (!React.isValidElement(child)) return;
+
+          const childProps = child.props as { children?: React.ReactNode };
+          const hasHeaderCells = React.Children.toArray(
+            childProps.children,
+          ).some(
+            (cell) =>
+              React.isValidElement(cell) && cell.type.toString().includes("th"),
+          );
+
+          if (hasHeaderCells) {
+            headerRows.push(child);
+          } else {
+            bodyRows.push(child);
+          }
+        });
+
+        return (
+          <div className="mb-6 overflow-x-auto">
+            <table className="border-border w-full border-collapse border">
+              {headerRows.length > 0 && <thead>{headerRows}</thead>}
+              {bodyRows.length > 0 && <tbody>{bodyRows}</tbody>}
+            </table>
+          </div>
+        );
+      },
+      [BLOCKS.TABLE_ROW]: (_, children) => {
+        const cellsArray = Array.isArray(children) ? children : [children];
+        const totalCells = cellsArray.length;
+
+        const nonEmptyCells = cellsArray.filter((cell) => {
+          if (!React.isValidElement(cell)) return false;
+          const cellProps = cell.props as { children?: unknown };
+          return hasContent(cellProps.children);
+        });
+
+        if (!nonEmptyCells.length) return null;
+
+        const colspan =
+          totalCells > 0 ? Math.ceil(totalCells / nonEmptyCells.length) : 1;
+
+        const cellsWithColspan = nonEmptyCells.map((cell) => {
+          if (!React.isValidElement(cell)) return cell;
+          return React.cloneElement(cell, {
+            colSpan: colspan,
+          } as React.HTMLAttributes<HTMLTableCellElement>);
+        });
+
+        return <tr>{cellsWithColspan}</tr>;
+      },
+      [BLOCKS.TABLE_HEADER_CELL]: (_, children) => {
+        if (!hasContent(children)) return null;
+        return (
+          <th className="border-border bg-surface-hover border px-4 py-2 font-semibold">
+            {children}
+          </th>
+        );
+      },
+      [BLOCKS.TABLE_CELL]: (_, children) => {
+        if (!hasContent(children)) return null;
+        return <td className="border-border border px-4 py-2">{children}</td>;
       },
     },
   };
