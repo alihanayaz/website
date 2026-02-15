@@ -7,3 +7,4 @@ export * from "./icon";
 export * from "./img";
 export * from "./skeleton";
 export * from "./text";
+export * from "./widget";

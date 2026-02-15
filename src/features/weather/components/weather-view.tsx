@@ -28,10 +28,10 @@ export function WeatherView({
   const time = useClock({ timeZone: tzId });
 
   return (
-    <div className="flex flex-col justify-between gap-4">
+    <div className="flex flex-col justify-between gap-2">
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-baseline gap-1">
-          <Icon as={MapPin} size={16} strokeWidth={2} />
+          <Icon as={MapPin} size={16} />
           <Text as="span" weight="medium" className="tracking-tight">
             {city}, {country}
           </Text>
