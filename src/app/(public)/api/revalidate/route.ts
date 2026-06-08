@@ -1,6 +1,7 @@
 import { revalidatePath, revalidateTag } from "next/cache";
 import { jsonResponse } from "@/lib/utils";
 import { CONTENT_TYPE, METADATA } from "@/lib/constants";
+
 const REVALIDATE_SECRET = process.env.REVALIDATE_SECRET;
 
 type RevalidatePayload = {
@@ -18,7 +19,7 @@ export async function POST(request: Request) {
   let payload: RevalidatePayload;
 
   try {
-    payload = (await request.json()) as RevalidatePayload;
+    payload = await request.json();
   } catch {
     return jsonResponse({ revalidated: false, message: "Invalid JSON" }, 400);
   }
@@ -44,6 +45,9 @@ export async function POST(request: Request) {
         break;
       case CONTENT_TYPE.BOOKMARKS:
         revalidateTag("bookmarks", "max");
+        break;
+      case CONTENT_TYPE.READING:
+        revalidateTag("reading", "max");
         break;
       default:
         return jsonResponse(

@@ -71,11 +71,13 @@ export const CONTACT = [
 export const CONTENT_TYPE = {
   BOOKMARKS: "bookmarks",
   PAGE: "page",
+  READING: "reading",
   WRITING: "writing",
 };
 
 export const REVALIDATE = {
   BOOKMARKS: 60 * 60 * 24 * 2, // 2 days
+  READING: 60 * 60 * 24, // 1 day
   WEATHER: 60 * 10, // 10 minutes
 };
 

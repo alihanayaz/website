@@ -1,4 +1,5 @@
 import { WritingWidget } from "@/features/content";
+import { ReadingWidget } from "@/features/reading";
 import { WeatherWidget } from "@/features/weather";
 import { Button, Heading, Hyperlink, Text } from "@/components/ui";
 import { CONTACT } from "@/lib/constants";
@@ -52,6 +53,8 @@ export default function HomePage() {
       <WritingWidget />
 
       <WeatherWidget />
+
+      <ReadingWidget />
     </div>
   );
 }

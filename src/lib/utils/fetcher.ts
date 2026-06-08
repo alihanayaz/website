@@ -1,4 +1,5 @@
 type FetchConfig = Omit<RequestInit, "next" | "cache"> & {
+  responseType?: "json" | "text";
   revalidate?: number | false;
   tags?: string[];
 };
@@ -8,11 +9,19 @@ export type GqlConfig = Omit<FetchConfig, "method" | "body"> & {
   variables?: Record<string, unknown>;
 };
 
+const CONTENT_TYPES: Record<
+  NonNullable<FetchConfig["responseType"]>,
+  string
+> = {
+  json: "application/json",
+  text: "text/xml",
+};
+
 export async function fetcher<T>(
   url: string,
   config: FetchConfig = {},
 ): Promise<T | null> {
-  const { headers, revalidate, tags, ...rest } = config;
+  const { headers, responseType = "json", revalidate, tags, ...rest } = config;
 
   try {
     const res = await fetch(url, {
@@ -20,7 +29,7 @@ export async function fetcher<T>(
       cache: revalidate === 0 ? "no-store" : "force-cache",
       signal: AbortSignal.timeout(10000),
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": CONTENT_TYPES[responseType],
         ...headers,
       },
       next: {
@@ -35,7 +44,7 @@ export async function fetcher<T>(
       return null;
     }
 
-    return (await res.json()) as T;
+    return (await res[responseType]()) as T;
   } catch (error) {
     console.error(`Fetch error: ${url}`, error);
     return null;
